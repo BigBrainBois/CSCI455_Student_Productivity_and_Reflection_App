@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "CSCI-455_Student_Productivity_and_Reflection_App"
