@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class Login extends AppCompatActivity {
 
 //    private Button loginButton;
-//    private TextView forgotPassword;
+    private TextView forgotPassword;
     private TextView notAMember;
 
     @Override
@@ -19,10 +19,10 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 //        loginButton = findViewById(R.id.loginButton);
-//        forgotPassword = findViewById(R.id.forgotPassword);
+        forgotPassword = findViewById(R.id.forgotPassword);
         notAMember = findViewById(R.id.notAMember);
 //        configureLogin();
-//        configureForgotPassword();
+        configureForgotPassword();
         configureNotAMember();
     }
 
@@ -36,16 +36,16 @@ public class Login extends AppCompatActivity {
 //            }
 //        });
 //    }
-//
-//    private void configureForgotPassword(){
-//        forgotPassword.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v){
-//                Intent intent = new Intent(Login.this, ForgotPassword.class);
-//                startActivity(intent);
-//            }
-//        });
-//    }
+
+    private void configureForgotPassword(){
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(Login.this, ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
+    }
 
     private void configureNotAMember(){
         notAMember.setOnClickListener(new View.OnClickListener() {
