@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "900684538091",
+    "firebase_url": "https://studality.firebaseio.com",
+    "project_id": "studality",
+    "storage_bucket": "studality.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900684538091:android:78c1f3ab10d94e9153deae",
+        "android_client_info": {
+          "package_name": "com.example.csci_455_student_productivity_and_reflection_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900684538091-2eu5bjatbrc7g23n94thl0chrluepc3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP8KrtDgpveTPkPCpXuCcDcYU9uGYnaxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900684538091-2eu5bjatbrc7g23n94thl0chrluepc3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

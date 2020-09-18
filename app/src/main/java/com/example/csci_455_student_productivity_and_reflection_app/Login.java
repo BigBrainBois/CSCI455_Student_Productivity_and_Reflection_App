@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class Login extends AppCompatActivity {
 
-//    private Button loginButton;
+    private Button loginButton;
     private TextView forgotPassword;
     private TextView notAMember;
 
@@ -18,7 +18,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-//        loginButton = findViewById(R.id.loginButton);
+        loginButton = findViewById(R.id.loginButton);
         forgotPassword = findViewById(R.id.forgotPassword);
         notAMember = findViewById(R.id.notAMember);
 //        configureLogin();
@@ -27,12 +27,12 @@ public class Login extends AppCompatActivity {
     }
 
 
-//    private void configureLogin(){                                            // To be added later when pages are made
+//    private void configureLogin(){
+//
 //        loginButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onClick(View v){
-//                Intent intent = new Intent(Login.this, Dashboard.class);
-//                startActivity(intent);
+//            public void onClick(View v) {
+//                sendLoginRequest(username.getText().toString(),password.getText().toString());
 //            }
 //        });
 //    }
