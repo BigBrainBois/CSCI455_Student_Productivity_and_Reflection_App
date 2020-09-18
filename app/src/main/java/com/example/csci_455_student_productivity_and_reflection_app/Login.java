@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class Login extends AppCompatActivity {
 
     private Button loginButton;
     private TextView forgotPassword;
     private TextView notAMember;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,6 @@ public class Login extends AppCompatActivity {
         configureNotAMember();
     }
 
-
 //    private void configureLogin(){
 //
 //        loginButton.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +37,7 @@ public class Login extends AppCompatActivity {
 //            }
 //        });
 //    }
+
 
     private void configureForgotPassword(){
         forgotPassword.setOnClickListener(new View.OnClickListener() {
