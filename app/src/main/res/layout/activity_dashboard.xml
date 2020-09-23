@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pink"
+    android:background="@color/primary"
     tools:context=".Dashboard">
 
     <FrameLayout
@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation"
-        app:itemTextColor="#7E7575"
-        app:itemIconTint="#7E7575"
-        android:background="?android:attr/windowBackground"/>
+        app:itemTextColor="@color/lightgray"
+        app:itemIconTint="@color/lightgray"
+        android:background="@color/tertiary"/>
 
 </RelativeLayout>
