@@ -1,14 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary">
-    
-    <TextView
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mood_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mood_fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="25dp"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@android:color/white"
+        app:srcCompat="@drawable/ic_mood_icon" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/terrible_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mood_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:tint="@android:color/white"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_terrible_icon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/sad_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/terrible_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:tint="@android:color/white"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_sad_icon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/okay_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sad_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:tint="@android:color/white"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_okay_icon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/good_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/okay_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:tint="@android:color/white"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_good_icon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/great_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/good_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:tint="@android:color/white"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ic_great_icon" />
 </RelativeLayout>
+
