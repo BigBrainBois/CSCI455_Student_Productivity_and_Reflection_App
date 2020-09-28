@@ -3,15 +3,17 @@ package com.example.csci_455_student_productivity_and_reflection_app;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.media.Image;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
