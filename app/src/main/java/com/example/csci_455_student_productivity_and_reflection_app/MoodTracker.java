@@ -16,7 +16,7 @@ public class MoodTracker extends AppCompatActivity{
     FloatingActionButton mood, terrible, sad, okay, good, great;
     Animation fabOpen, fabClose, fabClockwise, fabCounterClockwise;
 
-    boolean isOpen = false;
+    boolean isOpen = true;
 
 
     @Override
@@ -41,8 +41,9 @@ public class MoodTracker extends AppCompatActivity{
         mood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(MoodTracker.this, "You clicked on terrible", Toast.LENGTH_SHORT).show();
 
-                if(isOpen) {
+                if(!isOpen) {
                     terrible.startAnimation(fabClose);
                     sad.startAnimation(fabClose);
                     okay.startAnimation(fabClose);
