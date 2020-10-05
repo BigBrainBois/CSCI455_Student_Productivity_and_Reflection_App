@@ -37,7 +37,7 @@ public class Dashboard extends AppCompatActivity {
                             selectedFragment = new MoodFragment();
                             break;
                         case R.id.nav_courses:
-                            selectedFragment = new CourseFragment();
+                            selectedFragment = new TasksFragment();
                             break;
                         case R.id.nav_notes:
                             selectedFragment = new NotesFragment();
