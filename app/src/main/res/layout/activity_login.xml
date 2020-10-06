@@ -9,12 +9,13 @@
 
     <EditText
         android:id="@+id/email"
-        android:paddingLeft="50px"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:background="@drawable/text_input_bg"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="50px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -24,12 +25,13 @@
 
     <EditText
         android:id="@+id/password"
-        android:paddingLeft="50px"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:background="@drawable/text_input_bg"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
+        android:paddingLeft="50px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
