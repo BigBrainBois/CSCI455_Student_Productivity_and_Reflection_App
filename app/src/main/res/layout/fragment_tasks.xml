@@ -1,43 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary">
+    android:background="@color/tertiary"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:background="@color/primary"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:fontFamily="@font/ubuntu_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="Tasks"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_28sdp" />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:fontFamily="@font/ubuntu_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="'Moment of Zen'"
+            android:textAlignment="center"
+            android:textColor="#425761"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@color/white"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_16sdp">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/no_more_tasks"
+        android:fontFamily="@font/ubuntu_regular"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/to_do"
-        android:textColor="@color/secondary"
-        android:textSize="13pt"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="40dp"/>
+        android:layout_marginTop="@dimen/_30sdp"
+        android:text="No more tasks"
+        android:textSize="@dimen/_12sdp"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
 
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="25dp"
-        android:src="@drawable/logout" />
-
-    <ImageView
-        android:id="@+id/notification"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_toStartOf="@+id/logout"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/notification"/>
-
-    <ImageView
-        android:id="@+id/add_task"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/notification"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="30dp"
-        android:src="@drawable/add"/>
-
-
-</RelativeLayout>
+</LinearLayout>

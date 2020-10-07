@@ -5,4 +5,5 @@
     <color name="tertiary">#37474F</color>
     <color name="white">#FFFFFF</color>
     <color name="lightgray">#B6ACAC</color>
+    <color name="yellowcontrast">#F8B648</color>
 </resources>

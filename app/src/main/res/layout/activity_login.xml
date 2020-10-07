@@ -24,6 +24,7 @@
 
     <EditText
         android:id="@+id/password"
+        android:fontFamily="@font/ubuntu_regular"
         android:paddingLeft="50px"
         android:layout_width="300dp"
         android:layout_height="30dp"
@@ -39,6 +40,7 @@
 
     <Button
         android:id="@+id/loginButton"
+        android:fontFamily="@font/ubuntu_medium"
         android:layout_width="125dp"
         android:layout_height="100dp"
         android:background="@drawable/round_button"
@@ -52,6 +54,7 @@
 
     <TextView
         android:id="@+id/forgotPassword"
+        android:fontFamily="@font/ubuntu_regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -64,6 +67,7 @@
 
     <TextView
         android:id="@+id/notAMember"
+        android:fontFamily="@font/ubuntu_regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Not a member?"

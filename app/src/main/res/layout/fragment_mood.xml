@@ -13,10 +13,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/secondary"
+        android:backgroundTint="@color/yellowcontrast"
         android:clickable="true"
         android:focusable="true"
-        android:tint="@android:color/white"
+        android:tint="@color/tertiary"
         app:srcCompat="@drawable/ic_mood_icon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -94,22 +94,6 @@
         android:visibility="invisible"
         app:srcCompat="@drawable/ic_great_icon" />
 
-
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="25dp"
-        android:src="@drawable/logout" />
-
-    <ImageView
-        android:id="@+id/notification"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_toStartOf="@+id/logout"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/notification"/>
 
 </RelativeLayout>
 

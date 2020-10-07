@@ -1,43 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary">
 
     <TextView
+        android:id="@+id/tasks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/notes"
         android:textColor="@color/secondary"
         android:textSize="13pt"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="40dp"/>
+        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginStart="@dimen/_20sdp"/>
 
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@drawable/text_input_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:layout_below="@+id/tasks">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="Search"
+            android:src="@drawable/search"
+            app:tint="@color/secondary"/>
+
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Search notes"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="@color/white"
+            android:textColorHint="@color/primary"
+            android:textSize="@dimen/_13sdp"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/adddNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_margin="25dp"
-        android:src="@drawable/logout" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/yellowcontrast"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/tertiary"
+        app:srcCompat="@drawable/add" />
 
-    <ImageView
-        android:id="@+id/notification"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_toStartOf="@+id/logout"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/notification"/>
-
-    <ImageView
-        android:id="@+id/add_task"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@+id/notification"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="30dp"
-        android:src="@drawable/add"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        android:layout_below="@id/search_bar"/>
 
 
 </RelativeLayout>

@@ -42,7 +42,9 @@ public class Dashboard extends AppCompatActivity {
                         case R.id.nav_notes:
                             selectedFragment = new NotesFragment();
                             break;
-
+                        case R.id.nav_account:
+                            selectedFragment = new AccountFragment();
+                            break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectedFragment).commit();
