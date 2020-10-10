@@ -16,7 +16,7 @@ public class MoodTracker extends AppCompatActivity{
     FloatingActionButton mood, terrible, sad, okay, good, great;
     Animation fabOpen, fabClose, fabClockwise, fabCounterClockwise;
 
-    boolean isOpen = true;
+    boolean isOpen = false;
 
 
     @Override
@@ -25,61 +25,25 @@ public class MoodTracker extends AppCompatActivity{
         setContentView(R.layout.fragment_mood); //The page to access the layout
 
         //Initializing the variables to its correct button
-        mood = findViewById(R.id.mood_button);
-        terrible = findViewById(R.id.terrible_button);
-        sad = findViewById(R.id.sad_button);
-        okay = findViewById(R.id.okay_button);
-        good = findViewById(R.id.good_button);
-        great = findViewById(R.id.great_button);
+        mood = (FloatingActionButton) findViewById(R.id.mood_button);
+        terrible = (FloatingActionButton) findViewById(R.id.terrible_button);
+        sad = (FloatingActionButton) findViewById(R.id.sad_button);
+        okay = (FloatingActionButton) findViewById(R.id.okay_button);
+        good = (FloatingActionButton) findViewById(R.id.good_button);
+        great = (FloatingActionButton) findViewById(R.id.great_button);
 
-        fabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
-        fabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
-        fabClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_clockwise);
-        fabCounterClockwise = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.rotate_counterclockwise);
+        fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
+        fabClockwise = AnimationUtils.loadAnimation(this, R.anim.rotate_clockwise);
+        fabCounterClockwise = AnimationUtils.loadAnimation(this, R.anim.rotate_counterclockwise);
 
-        //Tapping the mood button function
+        //Clicking each mood
         mood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MoodTracker.this, "You clicked on terrible", Toast.LENGTH_SHORT).show();
-
-                if(!isOpen) {
-                    terrible.startAnimation(fabClose);
-                    sad.startAnimation(fabClose);
-                    okay.startAnimation(fabClose);
-                    good.startAnimation(fabClose);
-                    great.startAnimation(fabClose);
-                    mood.startAnimation(fabClockwise);
-
-                    terrible.setClickable(false);
-                    sad.setClickable(false);
-                    okay.setClickable(false);
-                    good.setClickable(false);
-                    great.setClickable(false);
-
-                    isOpen = false;
-                }
-                else{
-                    terrible.startAnimation(fabOpen);
-                    sad.startAnimation(fabOpen);
-                    okay.startAnimation(fabOpen);
-                    good.startAnimation(fabOpen);
-                    great.startAnimation(fabOpen);
-                    mood.startAnimation(fabCounterClockwise);
-
-                    terrible.setClickable(true);
-                    sad.setClickable(true);
-                    okay.setClickable(true);
-                    good.setClickable(true);
-                    great.setClickable(true);
-
-                    isOpen = true;
-                }
-
+                animateFab();
             }
         });
-
-        //Clicking each mood
         terrible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,6 +78,37 @@ public class MoodTracker extends AppCompatActivity{
                 Toast.makeText(MoodTracker.this, "You clicked on great", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+    //Tapping the mood button function
+    private void animateFab(){
+        if(isOpen){
+            mood.startAnimation(fabClockwise);
+            terrible.startAnimation(fabClose);
+            sad.startAnimation(fabClose);
+            okay.startAnimation(fabClose);
+            good.startAnimation(fabClose);
+            great.startAnimation(fabClose);
+            terrible.setClickable(false);
+            sad.setClickable(false);
+            okay.setClickable(false);
+            good.setClickable(false);
+            great.setClickable(false);
+            isOpen = false;
+        } else{
+            mood.startAnimation(fabCounterClockwise);
+            terrible.startAnimation(fabOpen);
+            sad.startAnimation(fabOpen);
+            okay.startAnimation(fabOpen);
+            good.startAnimation(fabOpen);
+            great.startAnimation(fabOpen);
+            terrible.setClickable(true);
+            sad.setClickable(true);
+            okay.setClickable(true);
+            good.setClickable(true);
+            great.setClickable(true);
+            isOpen = true;
+        }
 
     }
 }
