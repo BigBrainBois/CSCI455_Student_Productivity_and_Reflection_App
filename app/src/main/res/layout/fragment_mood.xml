@@ -31,7 +31,7 @@
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:srcCompat="@drawable/ic_terrible_icon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -46,7 +46,7 @@
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:srcCompat="@drawable/ic_sad_icon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -61,7 +61,7 @@
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:srcCompat="@drawable/ic_okay_icon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -76,7 +76,7 @@
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:srcCompat="@drawable/ic_good_icon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -91,7 +91,7 @@
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:srcCompat="@drawable/ic_great_icon" />
 
 
