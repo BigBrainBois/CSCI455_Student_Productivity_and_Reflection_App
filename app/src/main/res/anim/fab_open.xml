@@ -9,7 +9,6 @@
         android:toYScale="0.8"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:interpolator = "@android:anim/linear_interpolator"
         android:duration = "300"
         />
 
@@ -17,7 +16,6 @@
         android:duration="300"
         android:fromAlpha="0.0"
         android:toAlpha="1.0"
-        android:interpolator="@android:anim/accelerate_interpolator"
         />
 
 </set>
