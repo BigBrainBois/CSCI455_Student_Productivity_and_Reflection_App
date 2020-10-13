@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CSCI-455_Student_Productivity_and_Reflection_App</string>
+    <string name="app_name">Studality</string>
     <string name="home">Home</string>
     <string name="mood">Mood</string>
     <string name="courses">Courses</string>
@@ -11,4 +11,5 @@
     <string name="to_do">tasks</string>
     <string name="notes1">Notes</string>
     <string name="account">Account</string>
+    <string name="note_title">Note Title</string>
 </resources>
