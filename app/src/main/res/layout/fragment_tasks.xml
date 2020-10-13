@@ -43,6 +43,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasksList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_16sdp"
@@ -52,7 +53,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
-        android:id="@+id/no_more_tasks"
+        android:id="@+id/endpage"
         android:fontFamily="@font/ubuntu_regular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
