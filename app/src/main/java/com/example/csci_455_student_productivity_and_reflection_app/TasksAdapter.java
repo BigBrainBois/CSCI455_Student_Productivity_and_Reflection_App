@@ -1,4 +1,4 @@
-package com.example.csci_455_student_productivity_and_reflection_app;
+/*package com.example.csci_455_student_productivity_and_reflection_app;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.csci_455_student_productivity_and_reflection_app.R;
+import com.google.android.gms.tasks.Tasks;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -51,3 +56,4 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.MyViewHolder
         }
     }
 }
+*/

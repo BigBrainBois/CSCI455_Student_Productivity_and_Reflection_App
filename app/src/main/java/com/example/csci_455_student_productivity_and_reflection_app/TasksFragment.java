@@ -10,60 +10,105 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 
 public class TasksFragment extends Fragment {
 
-    TextView title, subtitle, endpage;
-    DatabaseReference reference;
-    RecyclerView tasksList;
-    ArrayList<MyTasks> list;
-    TasksAdapter tasksAdapter;
 
-    @Nullable
+    private FirebaseFirestore firebaseFirestore;
+    private View TasksFragmentView;
+    private RecyclerView myTasksList;
+
+    private FirestoreRecyclerAdapter adapter;
+
+    public TasksFragment(){
+
+    }
+
+
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_tasks, container, false);
-        title = v.findViewById(R.id.title);
-        subtitle = v.findViewById(R.id.moment_of_zen);
-        endpage = v.findViewById(R.id.endpage);
-        tasksList = v.findViewById(R.id.tasksList);
-        tasksList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        list = new ArrayList<MyTasks>();
+    public View onCreateView( LayoutInflater inflater, ViewGroup container,
+                                           Bundle savedInstanceState) {
 
-        // get data from firebase
-        reference = FirebaseDatabase.getInstance().getReference().child("MyTasks");
-        tasksAdapter = new TasksAdapter(getActivity(), list);
-        tasksList.setAdapter(tasksAdapter);
-        reference.addValueEventListener(new ValueEventListener() {
+        TasksFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
+
+        myTasksList = TasksFragmentView.findViewById(R.id.tasksList);
+        myTasksList.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        return TasksFragmentView;
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+
+        Query query = firebaseFirestore.collection("users").document("coolguy").collection("task");
+
+        FirestoreRecyclerOptions<Task> options = new FirestoreRecyclerOptions.Builder<Task>().setQuery(query, Task.class).build();
+
+        adapter = new FirestoreRecyclerAdapter<Task, TasksViewHolder>(options) {
+
+            @NonNull
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // set code to retrieve data
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
-                    MyTasks t = dataSnapshot1.getValue(MyTasks.class);
-                    list.add(t);
-                }
-                tasksAdapter = new TasksAdapter(getActivity(), list);
-                tasksList.setAdapter(tasksAdapter);
-                tasksAdapter.notifyDataSetChanged();
+            public TasksViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_items, parent, false);
+                return new TasksViewHolder(view);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // set code if no tasks shown
-                Toast.makeText(getContext(), "No Tasks", Toast.LENGTH_SHORT).show();
+            protected void onBindViewHolder(TasksViewHolder tasksViewHolder, int i, Task task) {
+                tasksViewHolder.task_title.setText(task.getJournalID());
+                String date = task.getStartDate() + "";
+                tasksViewHolder.task_date.setText(date);
+                tasksViewHolder.task_description.setText("");
             }
-        });
+        };
 
-        return v;
+        myTasksList.setHasFixedSize(true);
+        myTasksList.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        myTasksList.setAdapter(adapter);
+        adapter.startListening();
+
+    }
+
+    private class TasksViewHolder extends RecyclerView.ViewHolder{
+
+        private TextView task_title;
+        private TextView task_description;
+        private TextView task_date;
+
+        public TasksViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            task_title = itemView.findViewById(R.id.task_title);
+           task_description = itemView.findViewById(R.id.task_description);
+            task_date = itemView.findViewById(R.id.task_date);
+
+
+        }
+
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        adapter.stopListening();
     }
 }

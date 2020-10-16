@@ -1,4 +1,4 @@
-package com.example.csci_455_student_productivity_and_reflection_app;
+/*package com.example.csci_455_student_productivity_and_reflection_app;
 
 public class MyTasks {
     String taskTitle;
@@ -39,3 +39,4 @@ public class MyTasks {
         this.taskDesc = taskDesc;
     }
 }
+*/
