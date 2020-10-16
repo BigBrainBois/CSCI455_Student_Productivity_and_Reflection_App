@@ -34,17 +34,20 @@ public class TasksFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_tasks, container, false);
         title = v.findViewById(R.id.title);
-        subtitle = v.findViewById(R.id.subtitle);
+        subtitle = v.findViewById(R.id.moment_of_zen);
         endpage = v.findViewById(R.id.endpage);
         tasksList = v.findViewById(R.id.tasksList);
         tasksList.setLayoutManager(new LinearLayoutManager(getActivity()));
         list = new ArrayList<MyTasks>();
 
-        //firebase
-        reference = FirebaseDatabase.getInstance().getReference().child("Studality");
+        // get data from firebase
+        reference = FirebaseDatabase.getInstance().getReference().child("MyTasks");
+        tasksAdapter = new TasksAdapter(getActivity(), list);
+        tasksList.setAdapter(tasksAdapter);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // set code to retrieve data
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
                     MyTasks t = dataSnapshot1.getValue(MyTasks.class);
                     list.add(t);
@@ -56,6 +59,7 @@ public class TasksFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                // set code if no tasks shown
                 Toast.makeText(getContext(), "No Tasks", Toast.LENGTH_SHORT).show();
             }
         });

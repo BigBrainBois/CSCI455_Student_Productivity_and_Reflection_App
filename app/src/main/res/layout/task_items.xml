@@ -4,15 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_100sdp"
+    android:layout_height="@dimen/_90sdp"
     android:background="@drawable/text_input_bg"
     android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="250dp"
+        android:layout_width="232dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:paddingBottom="5dp"
         tools:ignore="MissingConstraints">
 
         <TextView
@@ -24,7 +25,7 @@
             android:fontFamily="@font/ubuntu_medium"
             android:text="Task Title"
             android:textColor="@color/white"
-            android:textSize="@dimen/_22sdp" />
+            android:textSize="@dimen/_16sdp" />
 
         <TextView
             android:id="@+id/task_description"
@@ -33,9 +34,9 @@
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/ubuntu_regular"
-            android:text="Description Title"
+            android:text="@string/description_title"
             android:textColor="@color/lightgray"
-            android:textSize="@dimen/_16sdp" />
+            android:textSize="@dimen/_14sdp" />
     </LinearLayout>
 
     <LinearLayout
@@ -52,9 +53,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu_regular"
-        android:text="Due date"
+        android:text="@string/due_date"
         android:textColor="@color/yellowcontrast"
-        android:textSize="@dimen/_18sdp"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"

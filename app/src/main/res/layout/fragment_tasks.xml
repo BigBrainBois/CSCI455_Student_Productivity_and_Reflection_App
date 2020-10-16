@@ -2,43 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tertiary"
+    android:background="@color/primary"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_150sdp"
+        android:layout_height="129dp"
         android:background="@color/primary"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/title"
-            android:fontFamily="@font/ubuntu_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/ubuntu_bold"
             android:text="@string/to_do"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/secondary"
             android:textSize="@dimen/_28sdp" />
 
         <TextView
-            android:id="@+id/subtitle"
-            android:fontFamily="@font/ubuntu_medium"
+            android:id="@+id/moment_of_zen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/ubuntu_medium"
             android:text="'Moment of Zen'"
             android:textAlignment="center"
             android:textColor="#425761"
-            android:textSize="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_8sdp"/>
+            android:textSize="@dimen/_12sdp" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:background="@color/white"/>
 
     </LinearLayout>
 
