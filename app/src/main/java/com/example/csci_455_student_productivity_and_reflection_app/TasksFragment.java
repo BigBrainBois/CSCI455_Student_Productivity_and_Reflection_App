@@ -25,15 +25,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
-import java.util.ArrayList;
-
 public class TasksFragment extends Fragment {
 
 
     private FirebaseFirestore firebaseFirestore;
-    private View TasksFragmentView;
     private RecyclerView myTasksList;
-
     private FirestoreRecyclerAdapter adapter;
 
     public TasksFragment(){
@@ -45,14 +41,14 @@ public class TasksFragment extends Fragment {
     public View onCreateView( LayoutInflater inflater, ViewGroup container,
                                            Bundle savedInstanceState) {
 
-        TasksFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
+        View tasksFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
 
-        myTasksList = TasksFragmentView.findViewById(R.id.tasksList);
+        myTasksList = tasksFragmentView.findViewById(R.id.tasksList);
         myTasksList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-        return TasksFragmentView;
+        return tasksFragmentView;
     }
 
     @Override
@@ -60,9 +56,7 @@ public class TasksFragment extends Fragment {
         super.onStart();
 
         Query query = firebaseFirestore.collection("users").document("coolguy").collection("task");
-
         FirestoreRecyclerOptions<Task> options = new FirestoreRecyclerOptions.Builder<Task>().setQuery(query, Task.class).build();
-
         adapter = new FirestoreRecyclerAdapter<Task, TasksViewHolder>(options) {
 
             @NonNull
@@ -98,7 +92,7 @@ public class TasksFragment extends Fragment {
             super(itemView);
 
             task_title = itemView.findViewById(R.id.task_title);
-           task_description = itemView.findViewById(R.id.task_description);
+            task_description = itemView.findViewById(R.id.task_description);
             task_date = itemView.findViewById(R.id.task_date);
 
 

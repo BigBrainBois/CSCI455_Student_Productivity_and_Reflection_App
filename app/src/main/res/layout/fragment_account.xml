@@ -23,6 +23,19 @@
         android:layout_below="@id/icon"
         android:layout_margin="@dimen/_16sdp"/>
 
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:textAlignment="center"
+        android:background="@drawable/text_input_bg"
+        android:text="Logout"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_25sdp"/>
+
 
 
 </RelativeLayout>
