@@ -1,4 +1,4 @@
-package com.example.csci_455_student_productivity_and_reflection_app;
+package com.example.csci_455_student_productivity_and_reflection_app.notes;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.csci_455_student_productivity_and_reflection_app.R;
 
 public class NotesFragment extends Fragment {
 

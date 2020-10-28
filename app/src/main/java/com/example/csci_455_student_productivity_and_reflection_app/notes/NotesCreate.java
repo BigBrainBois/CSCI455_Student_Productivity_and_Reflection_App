@@ -1,10 +1,12 @@
-package com.example.csci_455_student_productivity_and_reflection_app;
+package com.example.csci_455_student_productivity_and_reflection_app.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.csci_455_student_productivity_and_reflection_app.R;
 
 public class NotesCreate extends AppCompatActivity {
 

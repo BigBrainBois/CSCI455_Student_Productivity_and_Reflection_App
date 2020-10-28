@@ -1,41 +1,362 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary">
+
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="120dp"
         android:layout_height="122dp"
-        android:src="@drawable/account"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"/>
+        android:layout_marginTop="44dp"
+        android:src="@drawable/account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
-        android:fontFamily="@font/ubuntu_regular"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your Account"
-        android:textAlignment="center"
-        android:textSize="@dimen/_24sdp"
-        android:textColor="@color/white"
         android:layout_below="@id/icon"
-        android:layout_margin="@dimen/_16sdp"/>
-
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="@dimen/_250sdp"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:layout_marginBottom="248dp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/your_account"
         android:textAlignment="center"
-        android:background="@drawable/text_input_bg"
-        android:text="Logout"
-        android:textSize="@dimen/_14sdp"
-        android:textColor="@color/white"
-        android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/_25sdp"/>
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/_24sdp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_325sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintBottom_toTopOf="@+id/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.429">
+
+            <RelativeLayout
+                android:id="@+id/menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/profiletext"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="My Profile"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/profiletext"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
 
 
+            <RelativeLayout
+                android:id="@+id/menu2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu">
 
-</RelativeLayout>
+                <TextView
+                    android:id="@+id/contacttext"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu2">
+
+                <TextView
+                    android:id="@+id/settingstext"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Settings"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/settingstext"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <!--            Temporary Text-->
+
+            <RelativeLayout
+                android:id="@+id/menu4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu3">
+
+                <TextView
+                    android:id="@+id/contacttext1"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext1"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu4">
+
+                <TextView
+                    android:id="@+id/contacttext2"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext2"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu5">
+
+                <TextView
+                    android:id="@+id/contacttext3"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext3"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu6">
+
+                <TextView
+                    android:id="@+id/contacttext4"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext4"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu7">
+
+                <TextView
+                    android:id="@+id/contacttext5"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext5"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu8">
+
+                <TextView
+                    android:id="@+id/contacttext6"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext6"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/menu10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/menu9">
+
+                <TextView
+                    android:id="@+id/contacttext7"
+                    android:layout_width="@dimen/_275sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ubuntu_regular"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Contact"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/contacttext7"
+                    android:src="@drawable/arrow_right" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_below="@+id/menu10"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/_40sdp"
+                android:background="@drawable/text_input_bg"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="Logout"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

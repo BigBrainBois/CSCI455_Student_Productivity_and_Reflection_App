@@ -22,4 +22,6 @@
     <string name="submit">Submit</string>
     <string name="due_date">Due date</string>
     <string name="description_title">Description Title</string>
+    <string name="your_account">Your Account</string>
+    <string name="studality">Studality</string>
 </resources>

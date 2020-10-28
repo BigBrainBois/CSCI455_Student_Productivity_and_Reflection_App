@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.csci_455_student_productivity_and_reflection_app.notes.NotesFragment;
+import com.example.csci_455_student_productivity_and_reflection_app.tasks.TasksFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Dashboard extends AppCompatActivity {

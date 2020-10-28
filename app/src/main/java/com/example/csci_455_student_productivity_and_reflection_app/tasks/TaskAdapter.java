@@ -1,4 +1,4 @@
-package com.example.csci_455_student_productivity_and_reflection_app;
+package com.example.csci_455_student_productivity_and_reflection_app.tasks;
 
 import android.util.Log;
 import android.view.View;
