@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Studality</string>
     <string name="home">Home</string>
-    <string name="mood">Mood</string>
+    <string name="mood">mood</string>
     <string name="courses">Courses</string>
     <string name="notes">my notes</string>
     <string name="notes_fragment">Notes Fragment</string>
@@ -22,6 +22,8 @@
     <string name="submit">Submit</string>
     <string name="due_date">Due date</string>
     <string name="description_title">Description Title</string>
-    <string name="your_account">Your Account</string>
+    <string name="your_account">your account</string>
     <string name="studality">Studality</string>
+    <string name="settings">Settings</string>
+    <string name="setting">settings</string>
 </resources>

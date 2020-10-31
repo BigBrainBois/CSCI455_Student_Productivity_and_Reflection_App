@@ -5,6 +5,16 @@
     android:layout_height="match_parent"
     android:background="@color/primary">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mood"
+        android:gravity="center"
+        android:textColor="@color/secondary"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textSize="@dimen/_28sdp"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/mood_button"
         android:layout_width="wrap_content"

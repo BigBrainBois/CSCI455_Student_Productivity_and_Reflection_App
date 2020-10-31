@@ -11,11 +11,11 @@
         android:layout_height="wrap_content"
         android:text="@string/notes"
         android:textColor="@color/secondary"
-        android:textSize="13pt"
+        android:textSize="@dimen/_28sdp"
         android:fontFamily="@font/ubuntu_bold"
         android:includeFontPadding="false"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_20sdp"/>
 
     <LinearLayout
