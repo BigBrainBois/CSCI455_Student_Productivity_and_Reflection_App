@@ -44,7 +44,7 @@
     <EditText
         android:paddingStart="@dimen/_15sdp"
         android:fontFamily="@font/ubuntu_regular"
-        android:id="@+id/username"
+        android:id="@+id/password"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:background="@drawable/text_input_bg"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.056" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/signupButton"
         android:fontFamily="@font/ubuntu_medium"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_50sdp"
