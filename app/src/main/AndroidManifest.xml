@@ -17,6 +17,7 @@
         <activity android:name=".Dashboard" />
         <activity android:name=".Signup" />
         <activity android:name=".Login" />
+        <activity android:name=".AccountEdit" />
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
