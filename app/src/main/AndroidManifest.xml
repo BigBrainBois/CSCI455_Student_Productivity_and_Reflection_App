@@ -9,16 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".notes.NotesCreate"
+        <activity android:name=".TerribleActivity"></activity>
+        <activity android:name=".SadActivity" />
+        <activity android:name=".OkayActivity" />
+        <activity android:name=".GoodActivity" />
+        <activity android:name=".tasks.GreatActivity" />
+        <activity
+            android:name=".notes.NotesCreate"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden" >
-        </activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Signup" />
         <activity android:name=".Login" />
         <activity android:name=".AccountEdit" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>

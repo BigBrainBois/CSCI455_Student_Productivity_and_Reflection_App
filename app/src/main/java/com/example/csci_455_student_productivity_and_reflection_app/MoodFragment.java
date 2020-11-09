@@ -1,5 +1,6 @@
 package com.example.csci_455_student_productivity_and_reflection_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.csci_455_student_productivity_and_reflection_app.tasks.GreatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -46,6 +48,7 @@ public class MoodFragment extends Fragment {
 
         isOpen = false;
 
+
         // Functionality of each button/mood
 
         mood.setOnClickListener(new View.OnClickListener() {
@@ -73,38 +76,62 @@ public class MoodFragment extends Fragment {
         terrible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "You clicked on terrible", Toast.LENGTH_SHORT).show();
+                terribleActivity();
+                //Toast.makeText(getActivity(), "You clicked on terrible", Toast.LENGTH_SHORT).show();
+            }
+            private void terribleActivity(){
+                Intent intent = new Intent(getActivity(), TerribleActivity.class);
+                startActivity(intent);
             }
         });
 
         sad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "You clicked on sad", Toast.LENGTH_SHORT).show();
+                sadActivity();
+                //Toast.makeText(getActivity(), "You clicked on sad", Toast.LENGTH_SHORT).show();
+            }
+            private void sadActivity(){
+                Intent intent = new Intent(getActivity(), SadActivity.class);
+                startActivity(intent);
             }
         });
 
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "You clicked on okay", Toast.LENGTH_SHORT).show();
+                okayActivity();
+                //Toast.makeText(getActivity(), "You clicked on okay", Toast.LENGTH_SHORT).show();
+            }
+            private void okayActivity(){
+                Intent intent = new Intent(getActivity(), OkayActivity.class);
+                startActivity(intent);
             }
         });
 
         good.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "You clicked on good", Toast.LENGTH_SHORT).show();
+                goodActivity();
+                //Toast.makeText(getActivity(), "You clicked on good", Toast.LENGTH_SHORT).show();
+            }
+            private void goodActivity(){
+                Intent intent = new Intent(getActivity(), GoodActivity.class);
+                startActivity(intent);
             }
         });
 
         great.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "You clicked on great", Toast.LENGTH_SHORT).show();
+                greatActivity();
+            }
+
+            private void greatActivity() {
+                Intent intent = new Intent(getActivity(), GreatActivity.class);
+                startActivity(intent);
             }
         });
-
 
         return view; // inflate view
     }
