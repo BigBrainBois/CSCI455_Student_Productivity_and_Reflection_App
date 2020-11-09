@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="@id/backButton"/>
 
             <EditText
-                android:id="@+id/inputnoteFile"
+                android:id="@+id/noteTitle"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"
                 android:layout_marginStart="@dimen/_15sdp"
@@ -69,12 +69,12 @@
                 android:includeFontPadding="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="@id/inputnoteFile"
-                app:layout_constraintStart_toStartOf="@id/inputnoteFile"
-                app:layout_constraintTop_toBottomOf="@id/inputnoteFile"/>
+                app:layout_constraintEnd_toEndOf="@id/noteTitle"
+                app:layout_constraintStart_toStartOf="@id/noteTitle"
+                app:layout_constraintTop_toBottomOf="@id/noteTitle"/>
             
             <EditText
-                android:id="@+id/inputNoteSubtitle"
+                android:id="@+id/noteSubtitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_30sdp"
@@ -100,12 +100,12 @@
                 android:layout_height="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_12sdp"
                 android:background="@drawable/background_subtitle_indicator"
-                app:layout_constraintBottom_toBottomOf="@id/inputNoteSubtitle"
+                app:layout_constraintBottom_toBottomOf="@id/noteSubtitle"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/inputNoteSubtitle" />
+                app:layout_constraintTop_toTopOf="@id/noteSubtitle" />
 
             <EditText
-                android:id="@+id/inputNote"
+                android:id="@+id/noteContents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_15sdp"
@@ -123,7 +123,7 @@
                 android:textColorHint="@color/tertiary"
                 android:textSize="@dimen/_13sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/inputNoteSubtitle"/>
+                app:layout_constraintTop_toBottomOf="@id/noteSubtitle"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
