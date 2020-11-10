@@ -27,4 +27,8 @@
     <string name="settings">Settings</string>
     <string name="setting">settings</string>
     <string name="student_profile">Student Profile</string>
+    <string name="are_you_a_student">Are you a Student?</string>
+    <string name="what_did_you_do">What did you do?</string>
+    <string name="save">Save</string>
+    <string name="how_did_you_feel">How did you feel?</string>
 </resources>

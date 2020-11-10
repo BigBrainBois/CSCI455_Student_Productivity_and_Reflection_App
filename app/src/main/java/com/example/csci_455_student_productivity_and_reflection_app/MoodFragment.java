@@ -7,13 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.csci_455_student_productivity_and_reflection_app.tasks.GreatActivity;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.GoodActivity;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.OkayActivity;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.SadActivity;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.TerribleActivity;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.GreatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 

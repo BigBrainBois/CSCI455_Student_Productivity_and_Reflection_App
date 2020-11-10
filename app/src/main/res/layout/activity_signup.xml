@@ -9,14 +9,15 @@
 
     <EditText
         android:id="@+id/email"
-        android:fontFamily="@font/ubuntu_regular"
-        android:paddingStart="@dimen/_15sdp"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:background="@drawable/text_input_bg"
         android:ems="10"
+        android:fontFamily="@font/ubuntu_regular"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:paddingStart="@dimen/_15sdp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -26,14 +27,15 @@
 
     <EditText
         android:id="@+id/name"
-        android:fontFamily="@font/ubuntu_regular"
-        android:paddingStart="@dimen/_15sdp"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:background="@drawable/text_input_bg"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:fontFamily="@font/ubuntu_regular"
         android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:paddingStart="@dimen/_15sdp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -42,15 +44,17 @@
         app:layout_constraintVertical_bias="0.914" />
 
     <EditText
-        android:paddingStart="@dimen/_15sdp"
-        android:fontFamily="@font/ubuntu_regular"
         android:id="@+id/password"
         android:layout_width="300dp"
         android:layout_height="30dp"
+        android:autofillHints="Password"
         android:background="@drawable/text_input_bg"
         android:ems="10"
+        android:fontFamily="@font/ubuntu_regular"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:paddingStart="@dimen/_15sdp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -58,20 +62,49 @@
         app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintVertical_bias="0.056" />
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/are_you_a_student"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp"
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <Switch
+        android:id="@+id/studentSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/signupButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintVertical_bias="0.468"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
     <Button
         android:id="@+id/signupButton"
-        android:fontFamily="@font/ubuntu_medium"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_50sdp"
         android:layout_marginBottom="228dp"
         android:background="@drawable/text_input_bg"
         android:backgroundTint="@color/secondary"
+        android:fontFamily="@font/ubuntu_medium"
         android:text="@string/signup"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.669" />
+        app:layout_constraintVertical_bias="0.902" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

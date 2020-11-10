@@ -36,6 +36,7 @@
             android:layout_marginTop="@dimen/_75sdp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/text_input_bg"
+            android:textColor="@color/white"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress" />
@@ -49,6 +50,7 @@
             android:layout_marginTop="@dimen/_15sdp"
             android:layout_centerHorizontal="true"
             android:background="@drawable/text_input_bg"
+            android:textColor="@color/white"
             android:ems="10"
             android:inputType="textPersonName"
             android:hint="@string/name"

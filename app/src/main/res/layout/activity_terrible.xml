@@ -4,51 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tasks.GreatActivity"
+    tools:context=".mood.GreatActivity"
     android:background="@color/primary">
 
-    <TextView
-        android:layout_width="261dp"
-        android:layout_height="57dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="427dp"
-        android:text="What did you do?"
-        android:textSize="30dp"
-        android:textColor="@color/white"/>
+    <View
+        android:id="@+id/viewSubtitleIndicator"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_6sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:background="@drawable/background_subtitle_indicator"
+        android:layout_above="@id/editText"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
 
     <EditText
         android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="164dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="249dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:gravity="top"
+        android:hint="@string/how_did_you_feel"
+        android:background="@drawable/text_input_bg"
+        android:importantForAutofill="no"
+        android:padding="@dimen/_15sdp"
+        android:inputType="textMultiLine"
+        android:minHeight="@dimen/_100sdp"
         android:textColor="@color/white"
-        android:textSize="25dp" />
+        android:textColorHint="@color/secondary"
+        android:textSize="@dimen/_16sdp"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/SaveButton"
+        android:background="@drawable/background_subtitle_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="163dp"
-        android:layout_marginBottom="133dp"
-        android:text="Save" />
+        android:layout_below="@id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:text="@string/save" />
 
     <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="144dp"
-        android:layout_height="145dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="130dp"
-        android:layout_marginBottom="543dp"
+        android:layout_width="147dp"
+        android:layout_height="140dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/editText"
+        android:layout_marginBottom="@dimen/_50sdp"
+        app:tint="@color/secondary"
         app:srcCompat="@drawable/ic_terrible_icon" />
 
 

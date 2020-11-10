@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TerribleActivity"></activity>
-        <activity android:name=".SadActivity" />
-        <activity android:name=".OkayActivity" />
-        <activity android:name=".GoodActivity" />
-        <activity android:name=".tasks.GreatActivity" />
+        <activity android:name=".mood.TerribleActivity"></activity>
+        <activity android:name=".mood.SadActivity" />
+        <activity android:name=".mood.OkayActivity" />
+        <activity android:name=".mood.GoodActivity" />
+        <activity android:name=".mood.GreatActivity" />
         <activity
             android:name=".notes.NotesCreate"
             android:screenOrientation="portrait"
