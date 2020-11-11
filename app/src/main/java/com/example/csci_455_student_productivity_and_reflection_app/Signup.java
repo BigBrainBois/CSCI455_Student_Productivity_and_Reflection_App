@@ -83,8 +83,15 @@ public class Signup extends AppCompatActivity {
                     return;
                 }
 
-                String accountType = studentSwitch.toString();
-                uploadData(accountType ,email, name);
+                String accountType;
+
+                if(studentSwitch.isChecked()){
+                    accountType = "Student";
+                    uploadData(accountType ,email, name);
+                }else
+                    accountType = "General";
+                uploadData(accountType, email, name);
+
 
                 //create user
                 sAuth.createUserWithEmailAndPassword(email, password)
