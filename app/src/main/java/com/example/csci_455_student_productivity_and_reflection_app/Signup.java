@@ -30,7 +30,7 @@ import java.util.Map;
 public class Signup extends AppCompatActivity {
 
     private FirebaseAuth sAuth;
-   private FirebaseFirestore fStore;
+    private FirebaseFirestore fStore;
     private EditText sName, sEmail, sPassword;
     private Button signupBtn;
     private Switch studentSwitch;
