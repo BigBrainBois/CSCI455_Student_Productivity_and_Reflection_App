@@ -116,39 +116,39 @@ public class Signup extends AppCompatActivity {
                             }
                         });
             }
-                // Map<String, Object> userMap = new HashMap<>();
-                //userMap.put("accountType", "student");
-                // userMap.put("email", email);
-                // userMap.put("name", name);
+            // Map<String, Object> userMap = new HashMap<>();
+            //userMap.put("accountType", "student");
+            // userMap.put("email", email);
+            // userMap.put("name", name);
 
-                private void uploadData(String accountType, String email, String name) {
+            private void uploadData(String accountType, String email, String name) {
 
-                    Map<String, Object> doc = new HashMap<>();
-                    doc.put("accountType", accountType);
-                    doc.put("email", email);
-                    doc.put("name", name);
+                Map<String, Object> doc = new HashMap<>();
+                doc.put("accountType", accountType);
+                doc.put("email", email);
+                doc.put("name", name);
 
-                    //add this data
-                    fStore.collection("users").document().set(doc)
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    //called when data is added successfully
+                //add this data
+                fStore.collection("users").document().set(doc)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                //called when data is added successfully
 
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    //if any errors occur while uploading
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                //if any errors occur while uploading
 
-                                    //get and show error message
-                                    Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                //get and show error message
+                                Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
-                                }
-                            });
+                            }
+                        });
 
-                }
+            }
 
         });
     }
