@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <TextView
+        android:id="@+id/task_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task_title"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_20sdp"/>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/task_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/text_input_bg"
+        android:fontFamily="@font/ubuntu_regular"
+        android:gravity="top"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:minHeight="@dimen/_100sdp"
+        android:padding="@dimen/_15sdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/secondary"
+        android:textSize="@dimen/_14sdp" />
+
+    <TextView
+        android:id="@+id/task_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task_description"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_below="@id/editText"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/task_description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/text_input_bg"
+        android:fontFamily="@font/ubuntu_regular"
+        android:gravity="top"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:minHeight="@dimen/_100sdp"
+        android:padding="@dimen/_15sdp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/secondary"
+        android:textSize="@dimen/_14sdp" />
+
+    <TextView
+        android:id="@+id/task_due_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/task_due_date"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_below="@id/editText2"/>
+
+    <Button
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_regular"
+        android:padding="@dimen/_10sdp"
+        android:textSize="@dimen/_15sdp"
+        android:background="@drawable/text_input_bg"
+        android:layout_centerHorizontal="true"
+        android:hint="@string/pick_a_date"
+        android:textColor="@color/secondary"
+        android:textColorHint="@color/secondary"
+        android:layout_below="@+id/task_due_date" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/background_subtitle_indicator"
+        android:layout_centerHorizontal="true"
+        android:text="@string/add_task"
+        android:layout_below="@+id/date_picker"/>
+
+
+</RelativeLayout>

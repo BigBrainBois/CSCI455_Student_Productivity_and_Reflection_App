@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary"
     android:orientation="vertical">
 
@@ -11,17 +12,41 @@
         android:background="@color/primary"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/title"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="@string/to_do"
-            android:textAlignment="center"
-            android:textColor="@color/secondary"
-            android:textSize="@dimen/_28sdp" />
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="@dimen/_240sdp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="@string/to_do"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondary"
+                    android:textSize="@dimen/_28sdp" />
+            </LinearLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/yellowcontrast"
+                android:layout_marginTop="@dimen/_18sdp"
+                android:clickable="true"
+                android:focusable="true"
+                android:tint="@color/tertiary"
+                app:srcCompat="@drawable/add"
+                android:contentDescription="addTask" />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/moment_of_zen"
@@ -33,7 +58,6 @@
             android:textAlignment="center"
             android:textColor="#425761"
             android:textSize="@dimen/_12sdp" />
-
 
     </LinearLayout>
 

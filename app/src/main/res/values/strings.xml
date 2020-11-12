@@ -30,5 +30,10 @@
     <string name="are_you_a_student">Are you a Student?</string>
     <string name="what_did_you_do">What did you do?</string>
     <string name="save">Save</string>
-    <string name="how_did_you_feel">How did you feel?</string>
+    <string name="how_did_you_feel">How was your day?</string>
+    <string name="task_title">Task Title</string>
+    <string name="task_due_date">Task Due Date</string>
+    <string name="task_description">Task Description</string>
+    <string name="add_task">Add Task</string>
+    <string name="pick_a_date">Pick a date</string>
 </resources>

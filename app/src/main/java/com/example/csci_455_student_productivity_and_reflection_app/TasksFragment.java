@@ -1,5 +1,6 @@
-package com.example.csci_455_student_productivity_and_reflection_app.tasks;
+package com.example.csci_455_student_productivity_and_reflection_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.csci_455_student_productivity_and_reflection_app.R;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.TerribleActivity;
+import com.example.csci_455_student_productivity_and_reflection_app.tasks.AddTask;
+import com.example.csci_455_student_productivity_and_reflection_app.tasks.Task;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -23,6 +28,7 @@ public class TasksFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private RecyclerView myTasksList;
     private FirestoreRecyclerAdapter adapter;
+    private FloatingActionButton addTask;
 
     public TasksFragment(){
 
@@ -34,11 +40,19 @@ public class TasksFragment extends Fragment {
                                            Bundle savedInstanceState) {
 
         View tasksFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
-
         myTasksList = tasksFragmentView.findViewById(R.id.tasksList);
         myTasksList.setLayoutManager(new LinearLayoutManager(getContext()));
-
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+        // Start the addTask class by clicking the floating action button
+        addTask = tasksFragmentView.findViewById(R.id.addTask);
+        addTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddTask.class);
+                startActivity(intent);
+            }
+        });
 
         return tasksFragmentView;
     }

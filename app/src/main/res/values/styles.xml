@@ -4,4 +4,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- Custom style for the DatePicker -->
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/tertiary</item>
+        <item name="colorAccent">@color/yellowcontrast</item>
+    </style>
+
 </resources>

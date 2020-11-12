@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,15 +12,11 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
-
-import com.example.csci_455_student_productivity_and_reflection_app.notes.NotesCreate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -86,6 +81,7 @@ public class Signup extends AppCompatActivity {
                 String accountType = studentSwitch.toString();
                 uploadData(accountType ,email, name);
 
+
                 //create user
                 sAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Signup.this, new OnCompleteListener<AuthResult>() {
@@ -109,12 +105,9 @@ public class Signup extends AppCompatActivity {
                             }
                         });
             }
-                // Map<String, Object> userMap = new HashMap<>();
-                //userMap.put("accountType", "student");
-                // userMap.put("email", email);
-                // userMap.put("name", name);
 
                 private void uploadData(String accountType, String email, String name) {
+
 
                     Map<String, Object> doc = new HashMap<>();
                     doc.put("accountType", accountType);
