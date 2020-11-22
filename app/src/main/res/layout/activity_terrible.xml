@@ -13,12 +13,12 @@
         android:layout_height="@dimen/_6sdp"
         android:layout_marginStart="@dimen/_12sdp"
         android:background="@drawable/background_subtitle_indicator"
-        android:layout_above="@id/editText"
+        android:layout_above="@id/addTitle"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/addTitle"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_15sdp"
@@ -43,7 +43,7 @@
         android:background="@drawable/background_subtitle_indicator"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_50sdp"
-        android:layout_below="@id/editText"
+        android:layout_below="@id/addTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/_50sdp"
         android:text="@string/save" />
@@ -52,7 +52,7 @@
         android:layout_width="147dp"
         android:layout_height="140dp"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/editText"
+        android:layout_above="@+id/addTitle"
         android:layout_marginBottom="@dimen/_50sdp"
         app:tint="@color/secondary"
         app:srcCompat="@drawable/ic_terrible_icon" />

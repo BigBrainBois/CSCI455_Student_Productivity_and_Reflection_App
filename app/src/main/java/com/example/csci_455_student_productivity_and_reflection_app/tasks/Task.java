@@ -4,51 +4,40 @@ import java.lang.reflect.Array;
 import java.util.Date;
 
 public class Task {
-    private Array checkIn;
-    private boolean isComplete;
-    private String journalID;
-    private Date startDate;
+    private String title, description;
+    private Date date;
 
-    public Task(){
+    public Task() {
         //Empty constructor needed for firebase
     }
 
-    public Task(Array checkIn, boolean isComplete, String journalID, Date startDate){
-        this.checkIn = checkIn;
-        this.isComplete = isComplete;
-        this.journalID = journalID;
-        this.startDate = startDate;
+    public Task(String title, String description, Date date) {
+        this.title = title;
+        this.description = description;
+        this.date = date;
     }
 
-    public Array getCheckIn() {
-        return checkIn;
+    public String getTitle() {
+        return title;
     }
 
-    public boolean isComplete() {
-        return isComplete;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getJournalID() {
-        return journalID;
+    public String getDescription() {
+        return description;
     }
 
-    public Date getStartDate() {
-        return startDate;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setCheckIn(Array checkIn) {
-        this.checkIn = checkIn;
+    public Date getDate() {
+        return date;
     }
 
-    public void setComplete(boolean complete) {
-        isComplete = complete;
-    }
-
-    public void setJournalID(String journalID) {
-        this.journalID = journalID;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

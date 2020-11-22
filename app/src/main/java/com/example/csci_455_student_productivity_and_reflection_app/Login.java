@@ -13,11 +13,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.csci_455_student_productivity_and_reflection_app.notes.NotesCreate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
 
@@ -25,9 +27,10 @@ public class Login extends AppCompatActivity {
     private EditText email, password;
     private TextView forgotPassword, notAMember;
     private FirebaseAuth mAuth;
+    private FirebaseFirestore fStore;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
@@ -39,6 +42,7 @@ public class Login extends AppCompatActivity {
         notAMember = findViewById(R.id.notAMember);
 
         mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         notAMember.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +61,7 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String sEmail = email.getText().toString();
+                final String sEmail = email.getText().toString();
                 final String sPassword = password.getText().toString();
 
                 if (TextUtils.isEmpty(sEmail)) {
@@ -87,6 +91,8 @@ public class Login extends AppCompatActivity {
                                     Intent intent = new Intent(Login.this, Dashboard.class);
                                     startActivity(intent);
                                     finish();
+
+
                                 }
                             }
 
