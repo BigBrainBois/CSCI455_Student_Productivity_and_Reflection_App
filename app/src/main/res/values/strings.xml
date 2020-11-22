@@ -8,7 +8,7 @@
     <string name="course_fragment">Course Fragment</string>
     <string name="mood_fragment">Mood Fragment</string>
     <string name="home_fragment">Home Fragment</string>
-    <string name="to_do">tasks</string>
+    <string name="to_do">schedule</string>
     <string name="notes1">Notes</string>
     <string name="account">Account</string>
     <string name="note_title">Note Title</string>
@@ -30,10 +30,12 @@
     <string name="are_you_a_student">Are you a Student?</string>
     <string name="what_did_you_do">What did you do?</string>
     <string name="save">Save</string>
-    <string name="how_did_you_feel">How was your day?</string>
-    <string name="task_title">Task Title</string>
-    <string name="task_due_date">Task Due Date</string>
-    <string name="task_description">Task Description</string>
-    <string name="add_task">Add Task</string>
+    <string name="askMood">What did you do today? </string>
+    <string name="task_title">Title</string>
+    <string name="task_due_date">Due Date</string>
+    <string name="task_description">Description</string>
+    <string name="add_task">Add Schedule</string>
     <string name="pick_a_date">Pick a date</string>
+    <string name="add_coursework">add courses</string>
+    <string name="assignment_information">Assignment Information</string>
 </resources>

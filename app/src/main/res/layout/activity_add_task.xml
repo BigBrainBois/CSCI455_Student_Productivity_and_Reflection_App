@@ -14,7 +14,8 @@
         android:textSize="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_20sdp"/>
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"/>
 
     <EditText
         android:id="@+id/editText"
@@ -31,7 +32,9 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="@dimen/_100sdp"
-        android:padding="@dimen/_15sdp"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
         android:textColor="@color/white"
         android:textColorHint="@color/secondary"
         android:textSize="@dimen/_14sdp" />
@@ -47,6 +50,7 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
         android:layout_below="@id/editText"/>
 
     <EditText
@@ -70,6 +74,82 @@
         android:textSize="@dimen/_14sdp" />
 
     <TextView
+        android:id="@+id/information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/assignment_information"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_below="@id/editText2"/>
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_below="@+id/information">
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight"
+            android:textColor="@color/secondary"
+            android:textSize="@dimen/_13sdp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:layout_toStartOf="@+id/currGrade"
+            android:layout_marginEnd="@dimen/_35sdp"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/currGrade"
+            android:layout_below="@id/currGrade"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_35sdp"/>
+
+
+        <TextView
+            android:id="@+id/currGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current Grade"
+            android:textColor="@color/secondary"
+            android:textSize="@dimen/_13sdp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:layout_centerHorizontal="true"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/currGrade"
+            android:layout_marginTop="@dimen/_15sdp"/>
+
+
+        <TextView
+            android:id="@+id/color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color"
+            android:textColor="@color/secondary"
+            android:textSize="@dimen/_13sdp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:layout_toEndOf="@+id/currGrade"
+            android:layout_marginStart="@dimen/_35sdp"/>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/currGrade"
+            android:layout_below="@id/currGrade"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_35sdp"/>
+    </RelativeLayout>
+
+
+
+    <TextView
         android:id="@+id/task_due_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,7 +160,8 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_20sdp"
-        android:layout_below="@id/editText2"/>
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_below="@id/container"/>
 
     <Button
         android:id="@+id/date_picker"
@@ -105,7 +186,8 @@
         android:background="@drawable/background_subtitle_indicator"
         android:layout_centerHorizontal="true"
         android:text="@string/add_task"
-        android:layout_below="@+id/date_picker"/>
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_20sdp"/>
 
 
 </RelativeLayout>

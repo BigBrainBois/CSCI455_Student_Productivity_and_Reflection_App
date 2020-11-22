@@ -22,6 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MoodFragment extends Fragment {
 
+
     //Naming the variables
     private FloatingActionButton mood, terrible, sad, okay, good, great;
     private Animation fabOpen, fabClose, fabClockwise, fabCounterClockwise;
@@ -132,7 +133,7 @@ public class MoodFragment extends Fragment {
 
             private void greatActivity() {
                 Intent intent = new Intent(getActivity(), GreatActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, GreatActivity.resID);
             }
         });
 

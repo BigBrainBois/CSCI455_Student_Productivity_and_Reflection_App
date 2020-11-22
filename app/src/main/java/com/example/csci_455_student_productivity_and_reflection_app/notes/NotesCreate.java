@@ -13,12 +13,10 @@ import com.example.csci_455_student_productivity_and_reflection_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class NotesCreate extends AppCompatActivity {
 
@@ -29,7 +27,7 @@ public class NotesCreate extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_note);
+        setContentView(R.layout.activity_add_note);
 
         noteTitle = findViewById(R.id.noteTitle);
         noteSubtitle = findViewById(R.id.noteSubtitle);
