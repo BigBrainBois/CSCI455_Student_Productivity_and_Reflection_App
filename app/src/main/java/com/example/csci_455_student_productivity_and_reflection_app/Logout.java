@@ -18,7 +18,7 @@ public class Logout extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_account);
+        setContentView(R.layout.fragment_setting);
 
         logout = findViewById(R.id.logout);
         firebaseAuth = FirebaseAuth.getInstance();

@@ -19,10 +19,10 @@ public class AccountFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_account, container, false);
+        View v = inflater.inflate(R.layout.fragment_setting, container, false);
 
-        editProfile = v.findViewById(R.id.menu2);
-        resetPassword = v.findViewById(R.id.menu3);
+        editProfile = v.findViewById(R.id.edit_profile);
+        resetPassword = v.findViewById(R.id.reset_pass);
         configureProfile();
         configurePassword();
         return v;

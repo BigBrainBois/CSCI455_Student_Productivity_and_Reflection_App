@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mood.TerribleActivity"></activity>
+        <activity android:name=".courses.AddCourse"></activity>
+        <activity android:name=".mood.TerribleActivity" />
         <activity android:name=".mood.SadActivity" />
         <activity android:name=".mood.OkayActivity" />
         <activity android:name=".mood.GoodActivity" />
