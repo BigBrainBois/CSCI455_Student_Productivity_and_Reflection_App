@@ -7,11 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.csci_455_student_productivity_and_reflection_app.mood.BitmapHelper;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.GoodActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.OkayActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.SadActivity;
@@ -28,12 +30,17 @@ public class MoodFragment extends Fragment {
     private Animation fabOpen, fabClose, fabClockwise, fabCounterClockwise;
 
     private boolean isOpen;
+    ImageView imageView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mood, container, false);
         super.onCreate(savedInstanceState);
+
+        //Getting the image access from great activity for test -- this is currently crashing the activity
+//        imageView = (ImageView) view.findViewById(R.id.great_icon);
+//        imageView.setImageBitmap(BitmapHelper.getInstance().getBitmap());
 
 
         //Initializing the variables to its correct button
@@ -77,6 +84,10 @@ public class MoodFragment extends Fragment {
                 }
             }
         });
+
+
+        // Starting new activity for each mood
+        // Need to add functionality, aka get user input to display on moodfragment
         terrible.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,11 +144,11 @@ public class MoodFragment extends Fragment {
 
             private void greatActivity() {
                 Intent intent = new Intent(getActivity(), GreatActivity.class);
-                startActivityForResult(intent, GreatActivity.resID);
+                startActivity(intent);
             }
         });
 
-        return view; // inflate view
+        return view; // display mood fragment
     }
 
 

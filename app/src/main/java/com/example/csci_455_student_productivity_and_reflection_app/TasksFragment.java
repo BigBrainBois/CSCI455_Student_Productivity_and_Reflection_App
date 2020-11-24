@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,11 +23,21 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+
+
+/*
+* IMPORTANT CHANGES
+*   -RecyclerView turned into ListView -- all the commented out lines were from using Recyclerview are getting errors and crashing the app.
+*   -Need to rewrite code to cater to ListView instead of RecyclerView
+* */
+
+
+
 public class TasksFragment extends Fragment {
 
 
     private FirebaseFirestore firebaseFirestore;
-    private RecyclerView myTasksList;
+    private ListView myTasksList;
     private FirestoreRecyclerAdapter adapter;
     private FloatingActionButton addTask;
 
@@ -41,7 +52,7 @@ public class TasksFragment extends Fragment {
 
         View tasksFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
         myTasksList = tasksFragmentView.findViewById(R.id.tasksList);
-        myTasksList.setLayoutManager(new LinearLayoutManager(getContext()));
+        //myTasksList.setLayoutManager(new LinearLayoutManager(getContext()));
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         // Start the addTask class by clicking the floating action button
@@ -81,10 +92,10 @@ public class TasksFragment extends Fragment {
             }
         };
 
-        myTasksList.setHasFixedSize(true);
-        myTasksList.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        myTasksList.setAdapter(adapter);
-        adapter.startListening();
+//        myTasksList.setHasFixedSize(true);
+//        myTasksList.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+//        myTasksList.setAdapter(adapter);
+//        adapter.startListening();
 
     }
 

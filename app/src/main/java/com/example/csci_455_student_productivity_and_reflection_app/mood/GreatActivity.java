@@ -1,53 +1,52 @@
 package com.example.csci_455_student_productivity_and_reflection_app.mood;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.csci_455_student_productivity_and_reflection_app.MoodFragment;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
 
 public class GreatActivity extends AppCompatActivity {
-    public ImageView GREAT_ICON;
-    String imageString = "great_icon";
-    public static int resID = 0;
+//    Button saveButton;
+//    ImageView greatImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_great);
 
-        // getting the string of an image to put in the database to display the image of the mood on the dashboard
-        resID = getResources().getIdentifier(imageString, "id", getPackageName());
-        GREAT_ICON = findViewById(resID);
+        /* Code by Nawshin:
+        *     Converting image into bitmap to store in a String value
+        * */
 
-
-
-        // Saving the mood (doesn't work quite yet)
-//        Button send = findViewById(R.id.SaveButton);
-//        send.setOnClickListener(new View.OnClickListener() {
+//        saveButton = findViewById(R.id.SaveButton);
+//        greatImage = findViewById(R.id.great_icon);
+//        Bitmap viewBitmap = Bitmap.createBitmap(greatImage.getWidth(),greatImage.getHeight(),Bitmap.Config.ARGB_8888);
+//        Canvas canvas = new Canvas(viewBitmap);
+//        greatImage.setImageBitmap(viewBitmap);
+//        BitmapHelper.getInstance().setBitmap(viewBitmap);
+//
+//        saveButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                Fragment mFragment = new MoodFragment();
-//                FragmentManager fragmentManager = getSupportFragmentManager();
-//                fragmentManager.beginTransaction().replace(R.id.moodfrag, mFragment).commit();
-
-
-
-
-                // can't use Intents to start up a Fragment class
-//                Intent intent = new Intent(GreatActivity.this, MoodFragment.class);
-//                intent.putExtra("my_image", R.drawable.ic_great_icon);
-//                startActivity(intent);
+//                if(BitmapHelper.getInstance().getBitmap() == null ){
+//                    Toast.makeText(GreatActivity.this, "Bitmap can't null", Toast.LENGTH_SHORT).show();
+//
+//                } else{
+//                    Intent intent = new Intent(GreatActivity.this, MoodFragment.class);
+//                    startActivity(intent);
+//                }
+//
 //            }
 //        });
-
     }
 }
