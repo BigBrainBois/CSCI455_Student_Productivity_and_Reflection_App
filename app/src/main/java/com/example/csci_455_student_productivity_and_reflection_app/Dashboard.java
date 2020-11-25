@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.csci_455_student_productivity_and_reflection_app.notes.NotesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Dashboard extends AppCompatActivity {
@@ -44,7 +43,7 @@ public class Dashboard extends AppCompatActivity {
                             selectedFragment = new NotesFragment();
                             break;
                         case R.id.nav_account:
-                            selectedFragment = new AccountFragment();
+                            selectedFragment = new SettingsFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

@@ -69,7 +69,7 @@
         android:tint="@color/tertiary"
         app:srcCompat="@drawable/add" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/notesRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -54,22 +54,21 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
             android:fontFamily="@font/ubuntu_medium"
-            android:text="'Moment of Zen'"
+            android:text="@string/moment_of_zen"
             android:textAlignment="center"
             android:textColor="#425761"
             android:textSize="@dimen/_12sdp" />
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ListView
         android:id="@+id/tasksList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginRight="@dimen/_16sdp">
-
-    </androidx.recyclerview.widget.RecyclerView>
+    </ListView>
 
     <TextView
         android:id="@+id/endpage"
@@ -81,5 +80,10 @@
         android:textSize="@dimen/_12sdp"
         android:textAlignment="center"
         android:textColor="@color/white"/>
+
+
+
+
+
 
 </LinearLayout>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/_470sdp"
         android:layout_marginBottom="@dimen/_40sdp"
         android:clipToPadding="false"
         android:paddingBottom="@dimen/_10sdp">
@@ -31,18 +31,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageView
-                android:id="@+id/doneButton"
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:contentDescription="@string/app_name"
-                android:padding="@dimen/_4sdp"
-                android:src="@drawable/done"
-                app:layout_constraintTop_toBottomOf="@id/backButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/backButton"/>
-
             <EditText
                 android:id="@+id/noteTitle"
                 android:layout_width="match_parent"
@@ -61,6 +49,8 @@
                 android:textSize="@dimen/_16sdp"
                 app:layout_constraintTop_toBottomOf="@id/backButton"/>
 
+
+            <!--This is a placeholder-->
             <TextView
                 android:id="@+id/textDateTime"
                 android:layout_width="@dimen/_40sdp"
@@ -72,7 +62,7 @@
                 app:layout_constraintEnd_toEndOf="@id/noteTitle"
                 app:layout_constraintStart_toStartOf="@id/noteTitle"
                 app:layout_constraintTop_toBottomOf="@id/noteTitle"/>
-            
+
             <EditText
                 android:id="@+id/noteSubtitle"
                 android:layout_width="0dp"
@@ -127,4 +117,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:background="@drawable/background_subtitle_indicator"
+        android:layout_centerHorizontal="true"
+        android:text="@string/add_note"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_20sdp"/>
+
+</RelativeLayout>

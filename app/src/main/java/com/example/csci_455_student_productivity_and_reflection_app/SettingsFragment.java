@@ -11,10 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class AccountFragment extends Fragment {
+import com.example.csci_455_student_productivity_and_reflection_app.courses.AddCourse;
+import com.example.csci_455_student_productivity_and_reflection_app.settings.EditProfile;
+
+public class SettingsFragment extends Fragment {
 
     private RelativeLayout editProfile;
     private RelativeLayout resetPassword;
+    private RelativeLayout addCourse;
 
     @Nullable
     @Override
@@ -23,8 +27,10 @@ public class AccountFragment extends Fragment {
 
         editProfile = v.findViewById(R.id.edit_profile);
         resetPassword = v.findViewById(R.id.reset_pass);
+        addCourse = v.findViewById(R.id.add_course);
         configureProfile();
         configurePassword();
+        configureCourseAdd();
         return v;
     }
 
@@ -32,7 +38,7 @@ public class AccountFragment extends Fragment {
         editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(v.getContext(), AccountEdit.class);
+                Intent intent = new Intent(v.getContext(), EditProfile.class);
                 startActivity(intent);
             }
         });
@@ -43,6 +49,17 @@ public class AccountFragment extends Fragment {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(v.getContext(), ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    // Goes to AddCourse.java file under the courses package
+    private void configureCourseAdd() {
+        addCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(v.getContext(), AddCourse.class);
                 startActivity(intent);
             }
         });
