@@ -1,12 +1,16 @@
 package com.example.csci_455_student_productivity_and_reflection_app.tasks;
 
+import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.csci_455_student_productivity_and_reflection_app.R;
@@ -14,40 +18,29 @@ import com.example.csci_455_student_productivity_and_reflection_app.TasksFragmen
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class TaskAdapter extends FirestoreRecyclerAdapter <Task, TaskAdapter.TaskHolder>{
+import java.util.List;
 
-    public TaskAdapter(@NonNull FirestoreRecyclerOptions<Task> options) {
-        super(options);
+public class TaskAdapter extends ArrayAdapter<Task> {
+    public TaskAdapter(Context context, List<Task> object){
+        super(context, 0, object);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull TaskHolder holder, int position, @NonNull Task model) {
-        holder.textViewTitle.setText(model.getTitle());
-        holder.textViewDescription.setText(model.getDescription());
-        holder.textViewDate.setText(String.valueOf(model.getDate()));
-    }
-
-    @NonNull
-    @Override
-    public TaskHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.task_items, viewGroup, false);
-
-        return new TaskHolder(v);
-    }
-
-    class TaskHolder extends RecyclerView.ViewHolder {
-
-        TextView textViewTitle;
-        TextView textViewDescription;
-        TextView textViewDate;
-
-        public TaskHolder(@NonNull View itemView) {
-            super(itemView);
-
-            textViewTitle = itemView.findViewById(R.id.task_title);
-            textViewDescription = itemView.findViewById(R.id.task_description);
-            textViewDate = itemView.findViewById(R.id.task_date);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if(convertView == null){
+            convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.task_items, parent, false);
         }
+
+        TextView titleTextView = convertView.findViewById(R.id.task_title);
+        TextView descriptionTextView = convertView.findViewById(R.id.task_description);
+        TextView dateTextView = convertView.findViewById(R.id.task_date);
+
+        Task task = getItem(position);
+
+        titleTextView.setText(task.getTitle());
+        descriptionTextView.setText(task.getDescription());
+        dateTextView.setText(task.getDate() + "");
+
+        return convertView;
     }
 }

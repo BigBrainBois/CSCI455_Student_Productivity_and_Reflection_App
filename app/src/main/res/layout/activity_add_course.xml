@@ -77,7 +77,7 @@
 
     <!--Courses will appear here-->
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/course_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 

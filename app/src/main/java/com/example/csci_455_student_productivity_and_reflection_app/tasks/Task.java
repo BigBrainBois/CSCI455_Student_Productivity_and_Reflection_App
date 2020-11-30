@@ -1,11 +1,17 @@
 package com.example.csci_455_student_productivity_and_reflection_app.tasks;
 
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.annotations.NotNull;
+
 import java.lang.reflect.Array;
 import java.util.Date;
 
+import javax.annotation.Nullable;
+
 public class Task {
     private String title, description;
-    private Date date;
+    Date date;
 
     public Task() {
         //Empty constructor needed for firebase
@@ -21,23 +27,12 @@ public class Task {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
 }

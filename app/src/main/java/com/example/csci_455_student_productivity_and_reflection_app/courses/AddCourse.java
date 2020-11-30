@@ -31,7 +31,7 @@ public class AddCourse extends AppCompatActivity {
         setContentView(R.layout.activity_add_course);
         addText = findViewById(R.id.addText);
         addButton = findViewById(R.id.addButton);
-        listView = findViewById(R.id.listView);
+        listView = findViewById(R.id.course_list);
 
         itemList = new ArrayList<>();
         adapter = new ArrayAdapter<String>(AddCourse.this, R.layout.course_items, itemList);

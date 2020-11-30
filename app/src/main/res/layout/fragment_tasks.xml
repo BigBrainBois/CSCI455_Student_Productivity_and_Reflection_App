@@ -63,12 +63,11 @@
 
     <ListView
         android:id="@+id/tasksList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="575dp"
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_16sdp">
-    </ListView>
+        android:layout_marginRight="@dimen/_16sdp"></ListView>
 
     <TextView
         android:id="@+id/endpage"

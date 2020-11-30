@@ -54,7 +54,7 @@
         android:layout_below="@id/editText"/>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/addDescription"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="100dp"
         android:layout_below="@+id/task_description"
@@ -85,7 +85,7 @@
         android:layout_marginBottom="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_below="@id/editText2"/>
+        android:layout_below="@id/addDescription"/>
 
     <RelativeLayout
         android:id="@+id/container"
