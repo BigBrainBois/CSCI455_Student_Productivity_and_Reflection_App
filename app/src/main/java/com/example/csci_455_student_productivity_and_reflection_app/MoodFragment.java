@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.csci_455_student_productivity_and_reflection_app.mood.BitmapHelper;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.GoodActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.OkayActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.SadActivity;
@@ -37,10 +36,6 @@ public class MoodFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mood, container, false);
         super.onCreate(savedInstanceState);
-
-        //Getting the image access from great activity for test -- this is currently crashing the activity
-//        imageView = (ImageView) view.findViewById(R.id.great_icon);
-//        imageView.setImageBitmap(BitmapHelper.getInstance().getBitmap());
 
 
         //Initializing the variables to its correct button
