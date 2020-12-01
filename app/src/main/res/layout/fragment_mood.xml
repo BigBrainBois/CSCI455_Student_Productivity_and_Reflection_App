@@ -22,7 +22,13 @@
         android:layout_height="@dimen/_450sdp"
         android:layout_centerInParent="true"
         android:paddingStart="@dimen/_50sdp"
-        android:paddingEnd="@dimen/_50sdp"/>
+        android:paddingEnd="@dimen/_50sdp">
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="306dp"
+            android:layout_height="95dp" />
+    </FrameLayout>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

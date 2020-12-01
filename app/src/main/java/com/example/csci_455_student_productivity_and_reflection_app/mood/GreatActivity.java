@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -35,6 +36,8 @@ public class GreatActivity extends AppCompatActivity {
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
 
+        Button saveButton = findViewById(R.id.SaveButton);
+
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +59,19 @@ public class GreatActivity extends AppCompatActivity {
 
             }
         };
+
+
+        /**Nawshin's continuation for mood fragment code */
+     //   saveButton.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+        //    public void onClick(View view) {
+         //       String Data = dateView.getText().toString();
+          //      Intent intent = new Intent(GreatActivity.this, MoodFragment.class);
+           //     intent.putExtra("abc", Data);
+            //    startActivity(intent);
+             //   finish();
+           // }
+        //});
 
 
     }

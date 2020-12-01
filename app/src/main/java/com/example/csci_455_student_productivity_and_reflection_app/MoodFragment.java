@@ -2,12 +2,14 @@ package com.example.csci_455_student_productivity_and_reflection_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,7 +31,6 @@ public class MoodFragment extends Fragment {
     private Animation fabOpen, fabClose, fabClockwise, fabCounterClockwise;
 
     private boolean isOpen;
-    ImageView imageView;
 
     @Nullable
     @Override
@@ -53,6 +54,11 @@ public class MoodFragment extends Fragment {
         fabCounterClockwise = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_counterclockwise);
 
         isOpen = false;
+        /**Nawshin's continuation for mood fragment code */
+     //   TextView Display = view.findViewById(R.id.dateTextView);
+     //   Bundle bn = getActivity().getIntent().getExtras();
+      //  String date = bn.getString("abc");
+      //  Display.setText(String.valueOf(date));
 
 
         // Functionality of each button/mood
