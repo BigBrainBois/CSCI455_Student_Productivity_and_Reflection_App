@@ -3,6 +3,7 @@ package com.example.csci_455_student_productivity_and_reflection_app.mood;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -21,7 +22,7 @@ import java.util.Calendar;
 
 public class GreatActivity extends AppCompatActivity {
 
-    TextView dateView;
+    Button dateView;
     DatePickerDialog.OnDateSetListener listener;
 
 
@@ -41,7 +42,7 @@ public class GreatActivity extends AppCompatActivity {
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(GreatActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(GreatActivity.this, AlertDialog.THEME_HOLO_DARK,
                         listener, year, month, day);
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 datePickerDialog.show();

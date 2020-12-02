@@ -7,6 +7,7 @@
     android:background="@color/primary">
 
     <TextView
+        android:id="@+id/moodTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/mood"
@@ -16,19 +17,16 @@
         android:textSize="@dimen/_28sdp"
         android:layout_marginTop="@dimen/_20sdp"/>
 
-    <FrameLayout
-        android:id="@+id/mood_display"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_450sdp"
-        android:layout_centerInParent="true"
-        android:paddingStart="@dimen/_50sdp"
-        android:paddingEnd="@dimen/_50sdp">
-
-        <TextView
-            android:id="@+id/dateTextView"
-            android:layout_width="306dp"
-            android:layout_height="95dp" />
-    </FrameLayout>
+    <CalendarView
+        android:id="@+id/simpleCalendarView"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_below="@id/moodTitle"
+        android:theme="@style/CalenderViewCustom"
+        android:dateTextAppearance="@style/CalenderViewDateCustomText"
+        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"/>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -49,10 +47,9 @@
         android:id="@+id/terrible_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/mood_button"
-        android:layout_alignEnd="@+id/mood_button"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/mood_button"
+        android:layout_alignTop="@+id/mood_button"
+        android:layout_marginEnd="@dimen/_10sdp"
         android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
@@ -64,10 +61,8 @@
         android:id="@+id/sad_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/terrible_button"
-        android:layout_alignEnd="@+id/terrible_button"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/terrible_button"
+        android:layout_alignTop="@+id/terrible_button"
         android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
@@ -79,10 +74,8 @@
         android:id="@+id/okay_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/sad_button"
-        android:layout_alignEnd="@+id/sad_button"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/sad_button"
+        android:layout_alignTop="@+id/sad_button"
         android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
@@ -94,10 +87,8 @@
         android:id="@+id/good_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/okay_button"
-        android:layout_alignEnd="@+id/okay_button"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/okay_button"
+        android:layout_alignTop="@+id/okay_button"
         android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
@@ -109,10 +100,8 @@
         android:id="@+id/great_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/good_button"
-        android:layout_alignEnd="@+id/good_button"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/good_button"
+        android:layout_alignTop="@+id/good_button"
         android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"

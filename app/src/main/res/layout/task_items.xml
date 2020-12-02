@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/checkBox"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_90sdp"
+    android:layout_height="@dimen/_80sdp"
     android:background="@drawable/text_input_bg"
     android:orientation="horizontal">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="232dp"
+        android:layout_width="210dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingBottom="5dp"
@@ -20,23 +20,23 @@
             android:id="@+id/task_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:fontFamily="@font/ubuntu_medium"
             android:text="Task Title"
             android:textColor="@color/white"
-            android:textSize="@dimen/_16sdp" />
+            android:textSize="@dimen/_14sdp" />
 
         <TextView
             android:id="@+id/task_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:fontFamily="@font/ubuntu_regular"
             android:text="@string/description_title"
             android:textColor="@color/lightgray"
-            android:textSize="@dimen/_14sdp" />
+            android:textSize="@dimen/_12sdp" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,13 +50,14 @@
 
     <TextView
         android:id="@+id/task_date"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_150sdp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/ubuntu_regular"
-        android:text="@string/due_date"
-        android:textColor="@color/yellowcontrast"
-        android:textSize="@dimen/_14sdp"
         android:layout_marginEnd="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="Due Time"
+        android:textAlignment="center"
+        android:textColor="@color/yellowcontrast"
+        android:textSize="@dimen/_12sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
