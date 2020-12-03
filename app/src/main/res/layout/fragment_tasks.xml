@@ -6,12 +6,14 @@
     android:background="@color/primary"
     android:orientation="vertical">
 
+    <!--Container for top header-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="129dp"
         android:background="@color/primary"
         android:orientation="vertical">
 
+        <!--Nested Container-->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -34,6 +36,7 @@
                     android:textSize="@dimen/_28sdp" />
             </LinearLayout>
 
+            <!--Add schedule button-->
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/addTask"
                 android:layout_width="wrap_content"
@@ -48,6 +51,7 @@
 
         </LinearLayout>
 
+        <!--'Moment of Zen'-->
         <TextView
             android:id="@+id/moment_of_zen"
             android:layout_width="match_parent"
@@ -58,17 +62,18 @@
             android:textAlignment="center"
             android:textColor="#425761"
             android:textSize="@dimen/_12sdp" />
-
     </LinearLayout>
 
+    <!--Display Scheduled Items here-->
     <ListView
         android:id="@+id/tasksList"
         android:layout_width="wrap_content"
         android:layout_height="575dp"
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_16sdp"></ListView>
+        android:layout_marginRight="@dimen/_16sdp" />
 
+    <!--at the end of the list, display "No more tasks"-->
     <TextView
         android:id="@+id/endpage"
         android:fontFamily="@font/ubuntu_regular"

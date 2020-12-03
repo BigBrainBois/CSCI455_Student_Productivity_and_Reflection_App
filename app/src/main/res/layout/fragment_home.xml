@@ -5,11 +5,13 @@
     android:background="@color/primary">
 
 
+    <!--Container for header-->
     <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/_20sdp">
+        <!--"Welcome back [user]"-->
         <TextView
             android:id="@+id/greeting"
             android:layout_width="wrap_content"
@@ -21,7 +23,7 @@
             android:text="Welcome back, [user]"
             android:textColor="@color/secondary"
             android:textSize="@dimen/_18sdp" />
-
+        <!--"Today is [day]"-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +36,7 @@
             android:textSize="@dimen/_12sdp"/>
     </RelativeLayout>
 
+    <!--Divider-->
     <RelativeLayout
         android:id="@+id/divider"
         android:layout_width="match_parent"
@@ -45,6 +48,7 @@
             android:src="@drawable/text_input_bg"/>
     </RelativeLayout>
 
+    <!--ListView to display courses-->
     <ListView
         android:id="@+id/tasksList"
         android:layout_width="match_parent"

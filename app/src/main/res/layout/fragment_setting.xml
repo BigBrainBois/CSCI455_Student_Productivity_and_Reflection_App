@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary">
 
-
+    <!--Title-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -23,11 +23,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!--Container-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_400sdp"
         android:layout_below="@id/textView">
 
+        <!--Divider-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp">
@@ -37,6 +39,7 @@
                 android:src="@drawable/text_input_bg"/>
         </RelativeLayout>
 
+        <!--Your Account Row-->
         <RelativeLayout
             android:id="@+id/your_account"
             android:layout_width="match_parent"
@@ -60,6 +63,7 @@
                 android:layout_marginStart="@dimen/_25sdp"/>
         </RelativeLayout>
 
+        <!--Edit Profile Row-->
         <RelativeLayout
             android:id="@+id/edit_profile"
             android:layout_width="match_parent"
@@ -85,6 +89,7 @@
                 app:tint="@color/secondary"/>
         </RelativeLayout>
 
+        <!--Reset Password Row-->
         <RelativeLayout
             android:id="@+id/reset_pass"
             android:layout_width="match_parent"
@@ -110,6 +115,7 @@
                 app:tint="@color/secondary"/>
         </RelativeLayout>
 
+        <!--Add Course Row-->
         <RelativeLayout
             android:id="@+id/add_course"
             android:layout_width="match_parent"
@@ -136,6 +142,7 @@
                 app:tint="@color/secondary"/>
         </RelativeLayout>
 
+        <!--Notifications Row-->
         <RelativeLayout
             android:id="@+id/notifications"
             android:layout_width="match_parent"
@@ -160,7 +167,7 @@
                 android:layout_marginStart="@dimen/_25sdp"/>
         </RelativeLayout>
 
-
+        <!--Divider-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
@@ -171,7 +178,7 @@
                 android:src="@drawable/text_input_bg"/>
         </RelativeLayout>
 
-
+        <!--Via phone Row-->
         <RelativeLayout
             android:id="@+id/notify_phone"
             android:layout_width="match_parent"
@@ -197,6 +204,7 @@
                 tools:ignore="UseSwitchCompatOrMaterialXml" />
         </RelativeLayout>
 
+        <!--Via email Row-->
         <RelativeLayout
             android:id="@+id/notify_email"
             android:layout_width="match_parent"
@@ -225,7 +233,7 @@
 
     </RelativeLayout>
 
-
+    <!--Logout Button-->
     <Button
         android:id="@+id/logout"
         android:layout_width="@dimen/_250sdp"

@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true">
 
+            <!--Back button-->
             <ImageView
                 android:id="@+id/backButton"
                 android:layout_width="@dimen/_30sdp"
@@ -31,6 +32,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
+            <!--"Note Title" edittext-->
             <EditText
                 android:id="@+id/noteTitle"
                 android:layout_width="match_parent"
@@ -50,7 +52,7 @@
                 app:layout_constraintTop_toBottomOf="@id/backButton"/>
 
 
-            <!--This is a placeholder-->
+            <!--This is a placeholder, for spacing and UI purposes-->
             <TextView
                 android:id="@+id/textDateTime"
                 android:layout_width="@dimen/_40sdp"
@@ -63,6 +65,8 @@
                 app:layout_constraintStart_toStartOf="@id/noteTitle"
                 app:layout_constraintTop_toBottomOf="@id/noteTitle"/>
 
+
+            <!--"Note Subtitle" edittext-->
             <EditText
                 android:id="@+id/noteSubtitle"
                 android:layout_width="0dp"
@@ -84,6 +88,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textDateTime"/>
 
+            <!--Yellow thingy for UI purposes-->
             <View
                 android:id="@+id/viewSubtitleIndicator"
                 android:layout_width="@dimen/_5sdp"
@@ -94,6 +99,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/noteSubtitle" />
 
+
+            <!--"Type Note Here" edittext-->
             <EditText
                 android:id="@+id/noteContents"
                 android:layout_width="match_parent"
@@ -117,6 +124,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <!--Add Note Button-->
     <Button
         android:id="@+id/doneButton"
         android:layout_width="@dimen/_250sdp"

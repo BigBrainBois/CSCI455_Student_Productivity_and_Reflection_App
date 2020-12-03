@@ -7,7 +7,7 @@
     android:background="@color/primary"
     tools:context=".MainActivity">
 
-
+    <!--Image in the middle-->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="221dp"
@@ -23,6 +23,7 @@
         app:layout_constraintVertical_bias="0.683"
         tools:srcCompat="@drawable/logo" />
 
+    <!--Signup Button-->
     <Button
         android:id="@+id/signup"
         android:fontFamily="@font/ubuntu_medium"
@@ -40,7 +41,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.781" />
 
-
+    <!--Login Button-->
     <Button
         android:id="@+id/login"
         android:layout_width="@dimen/_250sdp"
@@ -58,6 +59,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.899" />
 
+    <!--Title-->
     <TextView
         android:id="@+id/textView"
         android:fontFamily="@font/ubuntu_bold"

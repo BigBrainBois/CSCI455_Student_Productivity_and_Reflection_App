@@ -8,6 +8,9 @@
     android:background="@drawable/text_input_bg"
     android:orientation="horizontal">
 
+    <!--Used for displaying schedules in the schedules fragment-->
+
+    <!--Container for Title and description-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="210dp"
@@ -39,15 +42,16 @@
             android:textSize="@dimen/_12sdp" />
     </LinearLayout>
 
+    <!--Missing Constraints needed for a Constraint Layout to avoid errors, do not remove-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_75sdp"
         android:layout_marginTop="@dimen/_30sdp"
         tools:ignore="MissingConstraints">
-
     </LinearLayout>
 
+    <!--Schedule date will display here-->
     <TextView
         android:id="@+id/task_date"
         android:layout_width="@dimen/_150sdp"

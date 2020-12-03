@@ -27,11 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-/*
-READ ME
 
-
- */
 public class NotesCreate extends AppCompatActivity {
 
     private EditText noteTitle, noteSubtitle, noteDescription;

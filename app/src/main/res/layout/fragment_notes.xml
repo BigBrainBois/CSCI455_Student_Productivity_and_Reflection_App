@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/primary">
 
+    <!--Title-->
     <TextView
         android:id="@+id/tasks"
         android:layout_width="wrap_content"
@@ -18,6 +19,7 @@
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginStart="@dimen/_20sdp"/>
 
+    <!--Search bar-->
     <LinearLayout
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
@@ -55,6 +57,8 @@
             android:textSize="@dimen/_13sdp"/>
     </LinearLayout>
 
+
+    <!--Button for adding note-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addNote"
         android:layout_width="wrap_content"
@@ -69,8 +73,9 @@
         android:tint="@color/tertiary"
         app:srcCompat="@drawable/add" />
 
+    <!--Display notes saved-->
     <ListView
-        android:id="@+id/notesRecyclerView"
+        android:id="@+id/notesListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_2sdp"
