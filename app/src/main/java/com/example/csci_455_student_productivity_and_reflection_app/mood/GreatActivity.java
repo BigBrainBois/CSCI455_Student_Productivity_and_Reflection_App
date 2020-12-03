@@ -22,6 +22,8 @@ import java.util.Calendar;
 
 public class GreatActivity extends AppCompatActivity {
 
+    //State the variables for the date button
+
     Button dateView;
     DatePickerDialog.OnDateSetListener listener;
 
@@ -31,13 +33,23 @@ public class GreatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_great);
 
+        //Initialize each date variable to its correspondent
+        //function
+
         dateView = findViewById(R.id.dateView);
         Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
 
+        //Initialize the save button that will make the user click the button
+        //to save the info in the journal
+
         Button saveButton = findViewById(R.id.SaveButton);
+
+        //When the date button is click, it pops up a calendar
+        //that calendar has a specific theme and shows the year, month, and day.
+        //The listener helps with the display when the user clicks on the date.
 
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override
