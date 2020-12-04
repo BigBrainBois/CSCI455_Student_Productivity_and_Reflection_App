@@ -2,21 +2,12 @@ package com.example.csci_455_student_productivity_and_reflection_app.tasks;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.csci_455_student_productivity_and_reflection_app.R;
-import com.example.csci_455_student_productivity_and_reflection_app.TasksFragment;
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 import java.util.List;
 
@@ -41,6 +32,9 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         descriptionTextView.setText(task.getDescription());
         dateTextView.setText(task.getDate() + "");
 
+
+       // Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left);
+        //convertView.startAnimation(animation);
         return convertView;
     }
 }

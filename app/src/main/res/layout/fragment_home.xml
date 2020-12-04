@@ -46,12 +46,14 @@
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/tasksList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_16sdp"
-        android:layout_below="@id/divider">
-    </ListView>
+        android:id="@+id/courselist"
+        android:layout_width="wrap_content"
+        android:layout_height="534dp"
+        android:layout_below="@id/divider"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"></ListView>
 
 
 </RelativeLayout>

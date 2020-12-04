@@ -1,13 +1,6 @@
 package com.example.csci_455_student_productivity_and_reflection_app.tasks;
 
-import androidx.annotation.NonNull;
-
-import com.google.firebase.database.annotations.NotNull;
-
-import java.lang.reflect.Array;
 import java.util.Date;
-
-import javax.annotation.Nullable;
 
 public class Task {
     private String title, description;
@@ -34,5 +27,4 @@ public class Task {
     public Date getDate() {
         return date;
     }
-
 }

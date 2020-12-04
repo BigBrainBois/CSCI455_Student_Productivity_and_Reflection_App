@@ -15,7 +15,7 @@
         <activity android:name=".mood.OkayActivity" />
         <activity android:name=".mood.GoodActivity" />
         <activity android:name=".mood.GreatActivity" />
-        <activity android:name=".tasks.AddTask" />
+        <activity android:name=".assignments.AddAssignment" />
         <activity
             android:name=".notes.NotesCreate"
             android:screenOrientation="portrait"
