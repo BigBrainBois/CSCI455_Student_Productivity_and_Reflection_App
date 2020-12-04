@@ -3,7 +3,9 @@ package com.example.csci_455_student_productivity_and_reflection_app.mood;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -20,7 +22,9 @@ import java.util.Calendar;
 
 public class GreatActivity extends AppCompatActivity {
 
-    TextView dateView;
+    //State the variables for the date button
+
+    Button dateView;
     DatePickerDialog.OnDateSetListener listener;
 
 
@@ -29,16 +33,28 @@ public class GreatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_great);
 
+        //Initialize each date variable to its correspondent
+        //function
+
         dateView = findViewById(R.id.dateView);
         Calendar c = Calendar.getInstance();
         final int year = c.get(Calendar.YEAR);
         final int month = c.get(Calendar.MONTH);
         final int day = c.get(Calendar.DAY_OF_MONTH);
 
+        //Initialize the save button that will make the user click the button
+        //to save the info in the journal
+
+        Button saveButton = findViewById(R.id.SaveButton);
+
+        //When the date button is click, it pops up a calendar
+        //that calendar has a specific theme and shows the year, month, and day.
+        //The listener helps with the display when the user clicks on the date.
+
         dateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(GreatActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(GreatActivity.this, AlertDialog.THEME_HOLO_DARK,
                         listener, year, month, day);
                 datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 datePickerDialog.show();
@@ -56,6 +72,19 @@ public class GreatActivity extends AppCompatActivity {
 
             }
         };
+
+
+        /**Nawshin's continuation for mood fragment code */
+     //   saveButton.setOnClickListener(new View.OnClickListener() {
+       //     @Override
+        //    public void onClick(View view) {
+         //       String Data = dateView.getText().toString();
+          //      Intent intent = new Intent(GreatActivity.this, MoodFragment.class);
+           //     intent.putExtra("abc", Data);
+            //    startActivity(intent);
+             //   finish();
+           // }
+        //});
 
 
     }

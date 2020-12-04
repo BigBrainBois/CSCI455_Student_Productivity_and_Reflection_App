@@ -10,6 +10,7 @@
 
     <!--==================IMPORTANT!!! NOT IMPLEMENTED ON SIGNUP YET==================-->
 
+    <!--Mood buttons-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -34,7 +35,7 @@
     </RelativeLayout>
 
 
-    <!--Add courses-->
+    <!--Add courses section with add button-->
     <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"

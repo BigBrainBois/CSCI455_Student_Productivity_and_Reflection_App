@@ -2,12 +2,14 @@ package com.example.csci_455_student_productivity_and_reflection_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,12 +26,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class MoodFragment extends Fragment {
 
 
-    //Naming the variables
+    //Name of the private variables that represents the facial expressions
+    //and the animation when opening and closing the mood button
     private FloatingActionButton mood, terrible, sad, okay, good, great;
     private Animation fabOpen, fabClose, fabClockwise, fabCounterClockwise;
 
+    //A boolean variable that helps initialize when the mood button is open or not
     private boolean isOpen;
-    ImageView imageView;
 
     @Nullable
     @Override
@@ -38,7 +41,8 @@ public class MoodFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-        //Initializing the variables to its correct button
+        //Initializing the mood and animation
+        // variables to its correct button
 
         mood = view.findViewById(R.id.mood_button);
         terrible = view.findViewById(R.id.terrible_button);
@@ -52,10 +56,19 @@ public class MoodFragment extends Fragment {
         fabClockwise = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_clockwise);
         fabCounterClockwise = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate_counterclockwise);
 
+        //Initializing the opposite if the mood button is not open
         isOpen = false;
 
+        /**Nawshin's continuation for mood fragment code */
+     //   TextView Display = view.findViewById(R.id.dateTextView);
+     //   Bundle bn = getActivity().getIntent().getExtras();
+      //  String date = bn.getString("abc");
+      //  Display.setText(String.valueOf(date));
 
-        // Functionality of each button/mood
+
+        // When the user clicks the mood button, each animation for
+        //the facial expression will have an animation along with the button itself.
+        //Otherwise, there will be no animation (minus the mood button)
 
         mood.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +94,9 @@ public class MoodFragment extends Fragment {
         });
 
 
-        // Starting new activity for each mood
+        // When a user clicks each of the facial expression
+        //it opens to the journal page. Will remove the comment out sections
+        //after the functionalities of the MoodFragment page is fully complete.
         // Need to add functionality, aka get user input to display on moodfragment
         terrible.setOnClickListener(new View.OnClickListener() {
             @Override

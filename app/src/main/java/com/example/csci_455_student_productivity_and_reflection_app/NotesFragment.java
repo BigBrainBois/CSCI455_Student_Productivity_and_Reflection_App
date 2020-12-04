@@ -23,6 +23,7 @@ public class NotesFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_notes, container, false);
 
+        // button to another activity for creating a note
         ImageView imageAddNoteMain = v.findViewById(R.id.addNote);
         imageAddNoteMain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +33,8 @@ public class NotesFragment extends Fragment {
             }
         });
 
+
+        // return view
         return v;
     }
 }

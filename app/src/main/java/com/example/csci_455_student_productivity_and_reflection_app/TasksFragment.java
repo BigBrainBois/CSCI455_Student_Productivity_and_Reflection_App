@@ -1,18 +1,32 @@
 package com.example.csci_455_student_productivity_and_reflection_app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.csci_455_student_productivity_and_reflection_app.R;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.TerribleActivity;
+import com.example.csci_455_student_productivity_and_reflection_app.tasks.AddTask;
 import com.example.csci_455_student_productivity_and_reflection_app.tasks.Task;
 import com.example.csci_455_student_productivity_and_reflection_app.tasks.TaskAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 

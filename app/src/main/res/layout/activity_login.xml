@@ -7,6 +7,7 @@
     android:background="@color/primary"
     tools:context=".Login">
 
+    <!--Email edittext-->
     <EditText
         android:id="@+id/email"
         android:layout_width="300dp"
@@ -25,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.325" />
 
+    <!--Password edittext-->
     <EditText
         android:id="@+id/password"
         android:fontFamily="@font/ubuntu_regular"
@@ -44,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintVertical_bias="0.05" />
 
+    <!--Login button-->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="@dimen/_250sdp"
@@ -58,6 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/password"
         app:layout_constraintVertical_bias="0.103" />
 
+    <!--Forgot Password text-->
     <TextView
         android:id="@+id/forgotPassword"
         android:fontFamily="@font/ubuntu_regular"
@@ -71,6 +75,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
 
+    <!--Not a member text-->
     <TextView
         android:id="@+id/notAMember"
         android:fontFamily="@font/ubuntu_regular"
