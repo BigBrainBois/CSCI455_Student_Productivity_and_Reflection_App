@@ -16,22 +16,23 @@
             android:id="@+id/greeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_20sdp"
             android:fontFamily="@font/ubuntu_medium"
-            android:text="Welcome back, [user]"
+            android:text="@string/welcome_back"
             android:textColor="@color/secondary"
             android:textSize="@dimen/_18sdp" />
         <!--"Today is [day]"-->
         <TextView
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ubuntu_regular"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/yellowcontrast"
-            android:text="Today is [day]"
+            android:text="@string/today_is"
             android:layout_below="@id/greeting"
             android:textSize="@dimen/_12sdp"/>
     </RelativeLayout>

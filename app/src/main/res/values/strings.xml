@@ -43,4 +43,6 @@
     <string name="add_courses_here">add courses here</string>
     <string name="course_title">Course Title</string>
     <string name="course_average">course average</string>
+    <string name="welcome_back">Welcome back,</string>
+    <string name="today_is">Today is</string>
 </resources>

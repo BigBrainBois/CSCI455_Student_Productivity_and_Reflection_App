@@ -20,7 +20,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 //https://stackoverflow.com/questions/49659549/how-to-show-a-firestore-collection-in-an-android-listview-using-an-adapter
 
@@ -35,6 +40,8 @@ public class HomeFragment extends Fragment {
     private ArrayList<Course> CourseList;
 
     private TextView greeting;
+    private TextView date;
+    String day = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date());
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
@@ -44,6 +51,7 @@ public class HomeFragment extends Fragment {
         CourseListView = courseFragmentView.findViewById(R.id.courselist);
 
         greeting = courseFragmentView.findViewById(R.id.greeting);
+        date = courseFragmentView.findViewById(R.id.date);
         mAuth = FirebaseAuth.getInstance();
 
         //get database
@@ -57,6 +65,7 @@ public class HomeFragment extends Fragment {
 
         FirebaseUser user = mAuth.getCurrentUser();
         greeting.setText(" Welcome back, " + user.getDisplayName());
+        date.setText("Today is " + day);
 
         db.collection("users");
 
