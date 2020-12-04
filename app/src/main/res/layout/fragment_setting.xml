@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/your_account"
                 android:fontFamily="@font/ubuntu_regular"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
         </RelativeLayout>
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="edit profile"
                 android:fontFamily="@font/ubuntu_regular"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
             <ImageView
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:text="reset password"
                 android:fontFamily="@font/ubuntu_regular"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
             <ImageView
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:text="add a course"
                 android:fontFamily="@font/ubuntu_regular"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
             <ImageView
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:text="notifications"
                 android:fontFamily="@font/ubuntu_regular"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
         </RelativeLayout>
@@ -191,7 +191,7 @@
                 android:layout_height="wrap_content"
                 android:text="notify via phone"
                 android:fontFamily="@font/ubuntu_regular"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
             <Switch
@@ -217,7 +217,7 @@
                 android:layout_height="wrap_content"
                 android:text="notify via email"
                 android:fontFamily="@font/ubuntu_regular"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
             <Switch

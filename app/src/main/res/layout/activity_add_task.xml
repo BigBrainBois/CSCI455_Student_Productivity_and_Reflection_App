@@ -56,11 +56,11 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_below="@id/editText"/>
 
-    <!--"Description" Edittext-->
+    <!--"Course Title" Edittext-->
     <EditText
         android:id="@+id/addDescription"
         android:layout_width="@dimen/_250sdp"
-        android:layout_height="100dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/course_average"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="@dimen/_15sdp"
@@ -70,12 +70,36 @@
         android:fontFamily="@font/ubuntu_regular"
         android:gravity="top"
         android:importantForAutofill="no"
-        android:inputType="textMultiLine"
+        android:inputType="text"
         android:minHeight="@dimen/_100sdp"
-        android:padding="@dimen/_15sdp"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
         android:textColor="@color/white"
         android:textColorHint="@color/secondary"
         android:textSize="@dimen/_14sdp" />
+
+
+
+    <!--    <EditText-->
+<!--        android:id="@+id/addDescription"-->
+<!--        android:layout_width="@dimen/_250sdp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_below="@+id/task_description"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginStart="@dimen/_15sdp"-->
+<!--        android:layout_marginEnd="@dimen/_15sdp"-->
+<!--        android:layout_marginBottom="@dimen/_15sdp"-->
+<!--        android:background="@drawable/text_input_bg"-->
+<!--        android:fontFamily="@font/ubuntu_regular"-->
+<!--        android:gravity="top"-->
+<!--        android:importantForAutofill="no"-->
+<!--        android:inputType="textMultiLine"-->
+<!--        android:minHeight="@dimen/_100sdp"-->
+<!--        android:padding="@dimen/_15sdp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/secondary"-->
+<!--        android:textSize="@dimen/_14sdp" />-->
 
     <!--Assignment Information - for colors, current grade, and color-->
     <TextView
@@ -171,7 +195,6 @@
         android:textSize="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginBottom="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_below="@id/container"/>
 
