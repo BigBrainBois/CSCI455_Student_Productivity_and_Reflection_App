@@ -1,9 +1,15 @@
-package com.example.csci_455_student_productivity_and_reflection_app.tasks;
+package com.example.csci_455_student_productivity_and_reflection_app.assignments;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -11,29 +17,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
-import com.example.csci_455_student_productivity_and_reflection_app.notes.NotesCreate;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import android.app.DatePickerDialog;
-import android.view.View;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class AddTask extends AppCompatActivity {
+public class AddAssignment extends AppCompatActivity {
 
     private String date1;
     private TextView taskTitle, taskDescription;
@@ -106,8 +101,8 @@ public class AddTask extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         //called when data is added successfully
 
-                        Toast.makeText(AddTask.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(AddTask.this, Dashboard.class);
+                        Toast.makeText(AddAssignment.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(AddAssignment.this, Dashboard.class);
                         startActivity(intent);
                     }
                 })
@@ -117,7 +112,7 @@ public class AddTask extends AppCompatActivity {
                         //if any errors occur while uploading
 
                         //get and show error message
-                        Toast.makeText(AddTask.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddAssignment.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });

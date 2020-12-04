@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
         CourseListView.setAdapter(CourseAdapter);
 
         FirebaseUser user = mAuth.getCurrentUser();
-        greeting.setText(" Welcome back, " + user.getUid());
+        greeting.setText(" Welcome back, " + user.getDisplayName());
 
         db.collection("users");
 

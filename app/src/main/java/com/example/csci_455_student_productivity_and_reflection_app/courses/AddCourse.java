@@ -1,53 +1,99 @@
 package com.example.csci_455_student_productivity_and_reflection_app.courses;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.csci_455_student_productivity_and_reflection_app.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddCourse extends AppCompatActivity {
 
-    // declare variables
-    private EditText addText;
-    private FloatingActionButton addButton;
-    private ListView listView;
+        private EditText noteTitle, noteSubtitle, noteDescription;
+        private Button createNote;
+        FirebaseFirestore db;
 
-    // for adding courses
-    ArrayAdapter<String> adapter;
-    ArrayList<String> itemList;
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_add_course);
 
+            noteTitle = findViewById(R.id.noteTitle);
+            noteSubtitle = findViewById(R.id.noteSubtitle);
+            noteDescription = findViewById(R.id.noteContents);
+            createNote = findViewById(R.id.doneButton);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_course);
-        addText = findViewById(R.id.addText);
-        addButton = findViewById(R.id.addButton);
-        listView = findViewById(R.id.course_list);
+            db = FirebaseFirestore.getInstance();
 
-        itemList = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(AddCourse.this, R.layout.course_items, itemList);
+            createNote.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //input data
+                    String title = noteTitle.getText().toString().trim();
+                    String subtitle = noteSubtitle.getText().toString().trim();
+                    String description = noteDescription.getText().toString().trim();
 
+                    //function call to upload data
+                    uploadData(title, subtitle, description);
+                }
+            });
 
-        // adding courses into the page
-        View.OnClickListener addListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                itemList.add(addText.getText().toString());
-                addText.setText("");
-                adapter.notifyDataSetChanged();
-            }
-        };
-        addButton.setOnClickListener(addListener);
-        listView.setAdapter(adapter);
+            ImageView imageBack = findViewById(R.id.backButton);
+            imageBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onBackPressed();
+                }
 
+            });
+        }
+
+        private void uploadData(String title, String subtitle, String description) {
+
+            Map<String, Object> doc = new HashMap<>();
+            doc.put("title", title);
+            doc.put("subtitle", subtitle);
+            doc.put("description", description);
+
+            FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            String userID = firebaseUser.getUid();
+
+            //add this data
+            db.collection("users").document("coolkid").collection("course").document("english").collection("notes").document().set(doc)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            //called when data is added successfully
+
+                          //  Toast.makeText(AddCourse, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
+                           // Intent intent = new Intent(com.example.csci_455_student_productivity_and_reflection_app.notes.NotesCreate.this, Dashboard.class);
+                          //  startActivity(intent);
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            //if any errors occur while uploading
+
+                            //get and show error message
+                          //  Toast.makeText(com.example.csci_455_student_productivity_and_reflection_app.notes.NotesCreate.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        }
     }
-}
+
