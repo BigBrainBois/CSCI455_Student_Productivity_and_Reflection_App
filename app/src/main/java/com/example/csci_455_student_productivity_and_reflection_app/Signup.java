@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -27,6 +29,7 @@ public class Signup extends AppCompatActivity {
     private FirebaseFirestore fStore;
     private EditText sName, sEmail, sPassword;
     private Button signupBtn;
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +45,12 @@ public class Signup extends AppCompatActivity {
         sPassword = findViewById(R.id.password);
         signupBtn = findViewById(R.id.signupButton);
 
+
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String name = sName.getText().toString().trim();
-                String email = sEmail.getText().toString().trim();
+                final String name = sName.getText().toString().trim();
+                final String email = sEmail.getText().toString().trim();
                 String password = sPassword.getText().toString().trim();
 
 
@@ -74,11 +78,47 @@ public class Signup extends AppCompatActivity {
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (task.isSuccessful()) {
+                                    FirebaseUser user = sAuth.getCurrentUser();
+                                    //Sets displayname to user input in "name" field
+                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                            .setDisplayName(name).build();
+                                    user.updateProfile(profileUpdates)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Toast.makeText(getApplicationContext(), "Display Name Added", Toast.LENGTH_SHORT).show();
+                                                    }
+                                                }
+                                            });
+                                    Map<String, Object> doc = new HashMap<>();
+                                    //doc.put("accountType", accountType);
+                                    doc.put("email", email);
+                                    doc.put("name", name);
+                                    //creates firestore document with userID as doc ID
+                                    //sets user info email & name
+                                    fStore.collection("users").document(user.getUid()).set(doc)
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    //called when data is added successfully
+
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    //if any errors occur while uploading
+
+                                                    //get and show error message
+                                                    Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                                                }
+                                            });
+
                                     startActivity(new Intent(Signup.this, Login.class));
                                     finish();
 
-                                    //Intent intent = new Intent(Signup.this, Dashboard.class);
-                                    //startActivity(intent);
 
                                 } else {
                                     Toast.makeText(Signup.this, "Authentication failed." + task.getException(),
@@ -86,38 +126,7 @@ public class Signup extends AppCompatActivity {
                                 }
                             }
                         });
-            }
-            // Map<String, Object> userMap = new HashMap<>();
-            //userMap.put("accountType", "student");
-            // userMap.put("email", email);
-            // userMap.put("name", name);
 
-            private void uploadData(String accountType, String email, String name) {
-
-                Map<String, Object> doc = new HashMap<>();
-                doc.put("accountType", accountType);
-                doc.put("email", email);
-                doc.put("name", name);
-
-                //add this data
-                fStore.collection("users").document().set(doc)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                //called when data is added successfully
-
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                //if any errors occur while uploading
-
-                                //get and show error message
-                                Toast.makeText(Signup.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-
-                            }
-                        });
 
             }
 

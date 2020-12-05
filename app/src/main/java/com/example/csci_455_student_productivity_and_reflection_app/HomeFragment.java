@@ -64,13 +64,14 @@ public class HomeFragment extends Fragment {
         CourseListView.setAdapter(CourseAdapter);
 
         FirebaseUser user = mAuth.getCurrentUser();
-        greeting.setText(" Welcome back, " + user.getDisplayName());
+        String[] firstName = user.getDisplayName().split("\\s");
+        greeting.setText(" Welcome back, \n" + firstName[0]);
         date.setText("Today is " + day);
 
         db.collection("users");
 
 
-        db.collection("users").document("coolkid").collection("course").get()
+        db.collection("users").document(user.getUid()).collection("course").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
