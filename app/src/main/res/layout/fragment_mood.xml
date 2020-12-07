@@ -65,12 +65,12 @@
         android:layout_toStartOf="@+id/mood_button"
         android:layout_alignTop="@+id/mood_button"
         android:layout_marginEnd="@dimen/_10sdp"
-        android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_terrible_icon" />
+        app:srcCompat="@drawable/ic_terrible_icon"
+        android:backgroundTint="@color/terrible_button_background_color"/>
 
     <!--Mood buttons: sad mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -79,12 +79,12 @@
         android:layout_height="wrap_content"
         android:layout_toStartOf="@+id/terrible_button"
         android:layout_alignTop="@+id/terrible_button"
-        android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_sad_icon" />
+        app:srcCompat="@drawable/ic_sad_icon"
+        android:backgroundTint="@color/sad_button_background_color"/>
 
     <!--Mood buttons: okay mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -93,12 +93,12 @@
         android:layout_height="wrap_content"
         android:layout_toStartOf="@+id/sad_button"
         android:layout_alignTop="@+id/sad_button"
-        android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_okay_icon" />
+        app:srcCompat="@drawable/ic_okay_icon"
+        android:backgroundTint="@color/okay_button_background_color"/>
 
     <!--Mood buttons: good mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -107,12 +107,12 @@
         android:layout_height="wrap_content"
         android:layout_toStartOf="@+id/okay_button"
         android:layout_alignTop="@+id/okay_button"
-        android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_good_icon" />
+        app:srcCompat="@drawable/ic_good_icon"
+        android:backgroundTint="@color/good_button_background_color"/>
 
     <!--Mood buttons: great mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -121,12 +121,12 @@
         android:layout_height="wrap_content"
         android:layout_toStartOf="@+id/good_button"
         android:layout_alignTop="@+id/good_button"
-        android:backgroundTint="@color/tertiary"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_great_icon" />
+        app:srcCompat="@drawable/ic_great_icon"
+        android:backgroundTint="@color/great_button_background_color"/>
 
 
 </RelativeLayout>
