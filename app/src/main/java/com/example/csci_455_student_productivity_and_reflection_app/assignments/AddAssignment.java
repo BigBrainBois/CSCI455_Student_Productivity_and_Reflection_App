@@ -35,7 +35,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
 
     private String date1, setGrade, setColor;
 
-    private double setWeight;
+    private String setWeight;
 
     private TextView assignmentTitle, courseTitle;
     private Button dateButton, addAssignment;
@@ -60,8 +60,8 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         weightList.setAdapter(adapter);
         weightList.setOnItemSelectedListener(this);
         //casting selected value to desired variable
-        setWeight = (double) weightList.getSelectedItem();
-
+        setWeight = (String) weightList.getSelectedItem();
+        final double weightSet = Double.parseDouble(setWeight);
 
         Spinner colorList = findViewById(R.id.colorSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -112,7 +112,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
 
 
                 //function call to upload input
-                uploadData(mTitle, mCourseTitle, date1, setWeight, setColor, setGrade);
+                uploadData(mTitle, mCourseTitle, date1, weightSet, setColor, setGrade);
             }
         });
     }

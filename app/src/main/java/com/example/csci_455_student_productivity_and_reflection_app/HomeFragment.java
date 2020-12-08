@@ -32,6 +32,7 @@ import java.util.Locale;
 public class HomeFragment extends Fragment {
     private ListView CourseListView;
 
+
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
 
@@ -50,6 +51,8 @@ public class HomeFragment extends Fragment {
 
         CourseListView = courseFragmentView.findViewById(R.id.courselist);
 
+
+
         greeting = courseFragmentView.findViewById(R.id.greeting);
         date = courseFragmentView.findViewById(R.id.date);
         mAuth = FirebaseAuth.getInstance();
@@ -63,12 +66,12 @@ public class HomeFragment extends Fragment {
 
         CourseListView.setAdapter(CourseAdapter);
 
-        FirebaseUser user = mAuth.getCurrentUser();
+        FirebaseUser user = mAuth.getInstance().getCurrentUser();
         String[] firstName = user.getDisplayName().split("\\s");
         greeting.setText(" Welcome back, \n" + firstName[0]);
         date.setText("Today is " + day);
 
-        db.collection("users");
+
 
 
         db.collection("users").document(user.getUid()).collection("course").get()
@@ -91,6 +94,8 @@ public class HomeFragment extends Fragment {
 
         return courseFragmentView;
     }
+
+
 
 
 }
