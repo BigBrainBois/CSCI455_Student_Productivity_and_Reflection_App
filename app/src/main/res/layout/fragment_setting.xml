@@ -105,14 +105,14 @@
                 android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrow_right"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                app:tint="@color/secondary"/>
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:src="@drawable/arrow_right"
+                app:tint="@color/secondary" />
         </RelativeLayout>
 
         <!--Add Course Row-->
@@ -132,14 +132,16 @@
                 android:textSize="@dimen/_14sdp"
                 android:textColor="@color/secondary"
                 android:layout_marginStart="@dimen/_25sdp"/>
+
             <ImageView
-                android:layout_width="wrap_content"
+                android:id="@+id/openAddCourse"
+                android:layout_width="14dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/arrow_right"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
-                app:tint="@color/secondary"/>
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:src="@drawable/arrow_right"
+                app:tint="@color/secondary" />
         </RelativeLayout>
 
         <!--Notifications Row-->

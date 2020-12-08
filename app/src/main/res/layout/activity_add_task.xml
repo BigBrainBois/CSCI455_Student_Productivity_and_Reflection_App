@@ -20,7 +20,7 @@
 
     <!--"Title" Edittext-->
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/assignmentTitle"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="40dp"
         android:layout_below="@+id/course_title"
@@ -54,11 +54,11 @@
         android:layout_marginBottom="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_below="@id/editText"/>
+        android:layout_below="@id/assignmentTitle"/>
 
     <!--"Course Title" Edittext-->
     <EditText
-        android:id="@+id/addDescription"
+        android:id="@+id/assignmentCourseTitle"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="40dp"
         android:layout_below="@+id/course_average"
@@ -114,7 +114,7 @@
         android:layout_marginBottom="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_below="@id/addDescription"/>
+        android:layout_below="@id/assignmentCourseTitle"/>
 
     <!--Container for weight, current grade, and color-->
     <RelativeLayout
@@ -136,12 +136,13 @@
             android:layout_marginEnd="@dimen/_35sdp"/>
         <!--This is a dropdown-->
         <Spinner
+            android:id="@+id/weightSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toStartOf="@id/currGrade"
             android:layout_below="@id/currGrade"
             android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_35sdp"/>
+            android:layout_marginEnd="@dimen/_35sdp"
+            android:layout_toStartOf="@id/currGrade" />
 
 
         <!--current grade-->
@@ -156,11 +157,12 @@
             android:layout_centerHorizontal="true"/>
         <!--This is a dropdown-->
         <Spinner
+            android:id="@+id/gradeSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@id/currGrade"
-            android:layout_marginTop="@dimen/_15sdp"/>
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_15sdp" />
 
         <!--color-->
         <TextView
@@ -175,12 +177,13 @@
             android:layout_marginStart="@dimen/_35sdp"/>
         <!--This is a dropdown-->
         <Spinner
+            android:id="@+id/colorSpinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/currGrade"
             android:layout_below="@id/currGrade"
+            android:layout_marginStart="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:layout_marginStart="@dimen/_35sdp"/>
+            android:layout_toEndOf="@id/currGrade" />
     </RelativeLayout>
 
 
@@ -215,7 +218,7 @@
 
     <!--Add Schedule Button-->
     <Button
-        android:id="@+id/submit"
+        android:id="@+id/addAssignment"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_50sdp"
         android:fontFamily="@font/ubuntu_bold"

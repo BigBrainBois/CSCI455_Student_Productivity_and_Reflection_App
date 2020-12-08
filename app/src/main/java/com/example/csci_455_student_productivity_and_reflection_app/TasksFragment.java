@@ -1,5 +1,6 @@
 package com.example.csci_455_student_productivity_and_reflection_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,9 +10,11 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.csci_455_student_productivity_and_reflection_app.assignments.AddAssignment;
 import com.example.csci_455_student_productivity_and_reflection_app.tasks.Task;
 import com.example.csci_455_student_productivity_and_reflection_app.tasks.TaskAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -37,12 +40,14 @@ public class TasksFragment extends Fragment {
     private TaskAdapter mTaskAdapter;
     private ArrayList<Task> mTaskList;
 
+    private FloatingActionButton addTask;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View tasksFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
 
+        addTask = tasksFragmentView.findViewById(R.id.addTask);
 
         mTaskListView = tasksFragmentView.findViewById(R.id.tasksList);
 
@@ -72,6 +77,14 @@ public class TasksFragment extends Fragment {
                     }
                 }
             });
+
+            addTask.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), AddAssignment.class));
+                }
+            });
+
             return tasksFragmentView;
     }
 

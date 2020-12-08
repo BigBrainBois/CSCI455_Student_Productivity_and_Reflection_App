@@ -45,4 +45,36 @@
     <string name="course_average">course average</string>
     <string name="welcome_back">Welcome back,</string>
     <string name="today_is">Today is</string>
+    <string-array name="color">
+        <item> Red </item>
+        <item> Blue </item>
+        <item> Green </item>
+    </string-array>
+    <string-array name="percentGrade">
+        <item>0.05</item>
+        <item>0.10</item>
+        <item>0.15</item>
+        <item>0.20</item>
+        <item>0.25</item>
+        <item>0.30</item>
+        <item>0.35</item>
+        <item>0.45</item>
+        <item>0.50</item>
+        <item>0.60</item>
+        <item>0.75</item>
+    </string-array>
+    <string-array name="currentGrade">
+        <item>A+</item>
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>C-</item>
+        <item>D+</item>
+        <item>D</item>
+        <item>F</item>
+    </string-array>
 </resources>

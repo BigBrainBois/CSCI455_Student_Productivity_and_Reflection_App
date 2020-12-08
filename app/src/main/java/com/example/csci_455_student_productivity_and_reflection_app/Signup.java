@@ -91,6 +91,9 @@ public class Signup extends AppCompatActivity {
                                                     }
                                                 }
                                             });
+
+
+
                                     Map<String, Object> doc = new HashMap<>();
                                     //doc.put("accountType", accountType);
                                     doc.put("email", email);
@@ -102,7 +105,6 @@ public class Signup extends AppCompatActivity {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     //called when data is added successfully
-
                                                 }
                                             })
                                             .addOnFailureListener(new OnFailureListener() {

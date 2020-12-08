@@ -1,8 +1,5 @@
 package com.example.csci_455_student_productivity_and_reflection_app.notes;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,21 +8,20 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
-import com.example.csci_455_student_productivity_and_reflection_app.Login;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
-import com.example.csci_455_student_productivity_and_reflection_app.Signup;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 
 public class NotesCreate extends AppCompatActivity {
@@ -77,10 +73,9 @@ public class NotesCreate extends AppCompatActivity {
         doc.put("description", description);
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        String userID = firebaseUser.getUid();
-
+        String uID = firebaseUser.getUid();
         //add this data
-        db.collection("users").document("coolkid").collection("course").document("english").collection("notes").document().set(doc)
+        db.collection("users").document(uID).collection("notes").document().set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

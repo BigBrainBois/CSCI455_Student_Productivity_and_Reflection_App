@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".courses.AddCourse"
-    android:background="@color/primary">
+    android:background="@color/primary"
+    tools:context=".courses.AddCourse">
 
 
     <!--==================IMPORTANT!!! NOT IMPLEMENTED ON SIGNUP YET==================-->
@@ -15,11 +14,11 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="@string/add_coursework"
         android:textColor="@color/secondary"
-        android:textSize="@dimen/_18sdp"
-        android:layout_margin="@dimen/_20sdp"/>
+        android:textSize="@dimen/_18sdp" />
 
 
     <!--Divider-->
@@ -28,10 +27,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:layout_below="@+id/textView">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/text_input_bg"/>
+            android:src="@drawable/text_input_bg" />
     </RelativeLayout>
 
 
@@ -43,36 +43,36 @@
         android:layout_below="@id/divider">
 
         <EditText
-            android:id="@+id/addText"
+            android:id="@+id/courseTitle"
             android:layout_width="@dimen/_225sdp"
             android:layout_height="@dimen/_50sdp"
-            android:paddingTop="@dimen/_15sdp"
-            android:paddingStart="@dimen/_20sdp"
-            android:paddingEnd="@dimen/_20sdp"
-            android:paddingBottom="@dimen/_20sdp"
-            android:fontFamily="@font/ubuntu_regular"
-            android:textColorHint="@color/tertiary"
-            android:hint="@string/add_courses_here"
-            android:textSize="@dimen/_12sdp"
-            android:textColor="@color/secondary"
+            android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_centerVertical="true"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Course Title"
             android:importantForAutofill="yes"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            android:textColor="@color/secondary"
+            android:textColorHint="@color/tertiary"
+            android:textSize="@dimen/_12sdp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addButton"
+            android:id="@+id/addCourse"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
-            android:backgroundTint="@color/yellowcontrast"
             android:layout_centerInParent="true"
             android:layout_marginStart="@dimen/_10sdp"
-            android:src="@drawable/add"
+            android:layout_toEndOf="@+id/courseTitle"
+            android:backgroundTint="@color/yellowcontrast"
             android:clickable="true"
             android:focusable="true"
-            android:tint="@color/tertiary"
-            android:layout_toEndOf="@+id/addText"/>
+            android:src="@drawable/add"
+            android:tint="@color/tertiary" />
 
     </RelativeLayout>
 
@@ -81,7 +81,7 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_16sdp"
-        android:layout_below="@id/container"/>
+        android:layout_below="@id/container"
+        android:layout_margin="@dimen/_16sdp" />
 
 </RelativeLayout>

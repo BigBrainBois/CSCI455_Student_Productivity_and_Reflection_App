@@ -28,9 +28,11 @@ public class SettingsFragment extends Fragment {
         editProfile = v.findViewById(R.id.edit_profile);
         resetPassword = v.findViewById(R.id.reset_pass);
         addCourse = v.findViewById(R.id.add_course);
+
         configureProfile();
         configurePassword();
         configureCourseAdd();
+
         return v;
     }
 
