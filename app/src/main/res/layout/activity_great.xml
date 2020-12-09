@@ -42,7 +42,7 @@
 
     <!--Save mood button-->
     <Button
-        android:id="@+id/SaveButton"
+        android:id="@+id/greatSaveButton"
         android:background="@drawable/background_subtitle_indicator"
         android:fontFamily="@font/ubuntu_bold"
         android:layout_width="@dimen/_250sdp"
