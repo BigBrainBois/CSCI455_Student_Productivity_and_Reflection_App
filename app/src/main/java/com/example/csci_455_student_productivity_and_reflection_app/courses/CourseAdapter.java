@@ -19,7 +19,7 @@ public class CourseAdapter extends ArrayAdapter<Course>{
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             if(convertView == null){
-                convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.course_items, parent, false);
+                convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.items_course, parent, false);
             }
 
             TextView titleTextView = convertView.findViewById(R.id.course_title);

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +16,8 @@ import com.example.csci_455_student_productivity_and_reflection_app.R;
 import com.example.csci_455_student_productivity_and_reflection_app.notes.NotesCreate;
 
 public class NotesFragment extends Fragment {
+
+    private ListView NotesListView;
 
     public static final int REQUEST_CODE_ADD_NOTE = 1;
 
@@ -32,6 +35,9 @@ public class NotesFragment extends Fragment {
                         REQUEST_CODE_ADD_NOTE);
             }
         });
+
+        // setting the list for showing notes
+        NotesListView = v.findViewById(R.id.notesListView);
 
 
         // return view

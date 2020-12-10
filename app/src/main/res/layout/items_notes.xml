@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/checkBox"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_75sdp"
+    android:background="@drawable/text_input_bg"
+    android:orientation="horizontal">
+
+        <!--Used for AddCourse.java-->
+    <TextView
+        android:id="@+id/note_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Note Title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp" />
+
+    <TextView
+        android:id="@+id/note_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_below="@id/note_title"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="note subtitle"
+        android:textColor="@color/lightgray"
+        android:textSize="@dimen/_14sdp" />
+</RelativeLayout>

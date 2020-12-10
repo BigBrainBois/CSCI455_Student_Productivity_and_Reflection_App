@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+    <!--Container for header-->
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_15sdp">
+        <!--"Welcome back [user]"-->
+        <TextView
+            android:id="@+id/course_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="Course Title"
+            android:textColor="@color/secondary"
+            android:textSize="@dimen/_18sdp" />
+        <!--"Today is [day]"-->
+        <TextView
+            android:id="@+id/course_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_regular"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:textColor="@color/yellowcontrast"
+            android:text="Course Grade"
+            android:textSize="@dimen/_18sdp"/>
+    </RelativeLayout>
+
+    <!--Divider-->
+    <RelativeLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/container">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/text_input_bg"/>
+    </RelativeLayout>
+
+    <!--ListView to display coursework-->
+    <ListView
+        android:id="@+id/courselist"
+        android:layout_width="wrap_content"
+        android:layout_height="534dp"
+        android:layout_below="@id/divider"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_16sdp"/>
+
+
+</RelativeLayout>

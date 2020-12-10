@@ -19,7 +19,7 @@ public class TaskAdapter extends ArrayAdapter<Task> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null){
-            convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.task_items, parent, false);
+            convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.items_task, parent, false);
         }
 
         TextView titleTextView = convertView.findViewById(R.id.task_title);

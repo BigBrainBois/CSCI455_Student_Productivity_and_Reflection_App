@@ -31,15 +31,12 @@ import java.util.Locale;
 
 public class HomeFragment extends Fragment {
     private ListView CourseListView;
-
-
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
 
     //Adapter
     private CourseAdapter CourseAdapter;
     private ArrayList<Course> CourseList;
-
     private TextView greeting;
     private TextView date;
     String day = new SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(new Date());
@@ -50,8 +47,6 @@ public class HomeFragment extends Fragment {
         View courseFragmentView = inflater.inflate(R.layout.fragment_home, container, false);
 
         CourseListView = courseFragmentView.findViewById(R.id.courselist);
-
-
 
         greeting = courseFragmentView.findViewById(R.id.greeting);
         date = courseFragmentView.findViewById(R.id.date);
