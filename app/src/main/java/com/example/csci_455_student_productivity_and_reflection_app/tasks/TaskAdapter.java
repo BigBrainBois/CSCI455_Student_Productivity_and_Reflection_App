@@ -1,4 +1,4 @@
-package com.example.csci_455_student_productivity_and_reflection_app.tasks;
+/*package com.example.csci_455_student_productivity_and_reflection_app.tasks;
 
 import android.app.Activity;
 import android.content.Context;
@@ -38,3 +38,4 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         return convertView;
     }
 }
+*/

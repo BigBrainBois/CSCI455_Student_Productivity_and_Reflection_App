@@ -21,8 +21,6 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
@@ -67,9 +65,7 @@ public class HomeFragment extends Fragment {
         date.setText("Today is " + day);
 
 
-
-
-        db.collection("users").document(user.getUid()).collection("course").get()
+        db.collection("users").document(user.getUid()).collection("courses").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -77,12 +73,11 @@ public class HomeFragment extends Fragment {
                     for(QueryDocumentSnapshot document : task.getResult()){
                        Course c = document.toObject(Course.class);
                         CourseList.add(c);
+                        CourseListView.setAdapter(CourseAdapter);
+                        CourseAdapter.notifyDataSetChanged();
+                    }
                     }
 
-                    CourseAdapter.addAll(CourseList);
-                    CourseAdapter.notifyDataSetChanged();
-                    CourseListView.setAdapter(CourseAdapter);
-                    }
                 }
 
         });

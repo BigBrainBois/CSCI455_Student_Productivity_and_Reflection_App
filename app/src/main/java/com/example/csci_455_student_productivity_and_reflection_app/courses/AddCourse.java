@@ -68,12 +68,14 @@ public class AddCourse extends AppCompatActivity {
             FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
             String uID = firebaseUser.getUid();
 
+            String document = courseTitle.getText().toString();
+
             //add this data
-            db.collection("users").document(uID).collection("course").document().set(doc)
+            db.collection("users").document(uID).collection("courses").document(document).set(doc)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            //called when data is added successfully
+                            /* called when data is added successfully */
 
                           Toast.makeText(AddCourse.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
                            Intent intent = new Intent(AddCourse.this, Dashboard.class);

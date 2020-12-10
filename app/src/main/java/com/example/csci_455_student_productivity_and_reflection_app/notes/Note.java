@@ -1,8 +1,5 @@
 package com.example.csci_455_student_productivity_and_reflection_app.notes;
 
-import java.lang.reflect.Array;
-import java.util.Date;
-
 public class Note {
 
     private String title;
@@ -19,18 +16,6 @@ public class Note {
         this.description = description;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setSubtitle(String subtitle) {
-        this.subtitle = subtitle;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -39,7 +24,7 @@ public class Note {
         return subtitle;
     }
 
-    public String getDescription() {
-        return description;
-    }
+    //public String getDescription() {
+   //     return description;
+    //}
 }

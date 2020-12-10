@@ -33,9 +33,9 @@ import java.util.Map;
 
 public class AddAssignment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private String date1, setGrade, setColor;
+    private String setGrade, setColor, setWeight, date1;
 
-    private String setWeight;
+
 
     private TextView assignmentTitle, courseTitle;
     private Button dateButton, addAssignment;
@@ -60,7 +60,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         weightList.setAdapter(adapter);
         weightList.setOnItemSelectedListener(this);
         //casting selected value to desired variable
-        setWeight = (String) weightList.getSelectedItem();
+        setWeight = weightList.getSelectedItem().toString();
         final double weightSet = Double.parseDouble(setWeight);
 
         Spinner colorList = findViewById(R.id.colorSpinner);
@@ -73,7 +73,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         colorList.setAdapter(adapter1);
         colorList.setOnItemSelectedListener(this);
         //casting selected value to desired variable
-        setColor = (String) colorList.getSelectedItem();
+        setColor = colorList.getSelectedItem().toString();
 
         Spinner currentGradeList = findViewById(R.id.gradeSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -85,7 +85,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         currentGradeList.setAdapter(adapter2);
         currentGradeList.setOnItemSelectedListener(this);
         //casting selected value to desired variable
-        setGrade = (String) currentGradeList.getSelectedItem();
+        setGrade = currentGradeList.getSelectedItem().toString();
 
 
         // initializing edit texts
@@ -149,15 +149,18 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         doc.put("course", course);
         doc.put("weight", weight);
         doc.put("color", color);
-        doc.put("due date", date);
-        doc.put("current grade", grade);
+        doc.put("dueDate", date);
+        doc.put("currentGrade", grade);
 
         //get the ID of the user that's logged in for query.
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         String uID = firebaseUser.getUid();
 
+       // String document = courseTitle.getText().toString();
+        String document2 = assignmentTitle.getText().toString();
+
         //add hash map as location for query.
-        db.collection("users").document(uID).collection("course").document().set(doc)
+        db.collection("users").document(uID).collection("assignments").document(document2).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

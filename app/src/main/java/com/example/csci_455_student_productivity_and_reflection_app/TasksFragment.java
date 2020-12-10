@@ -11,11 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.csci_455_student_productivity_and_reflection_app.assignments.AddAssignment;
-import com.example.csci_455_student_productivity_and_reflection_app.tasks.Task;
-import com.example.csci_455_student_productivity_and_reflection_app.tasks.TaskAdapter;
+import com.example.csci_455_student_productivity_and_reflection_app.assignments.Assignment;
+import com.example.csci_455_student_productivity_and_reflection_app.assignments.AssignmentAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -32,60 +35,64 @@ import java.util.List;
 
 public class TasksFragment extends Fragment {
 
-    private ListView mTaskListView;
+    private ListView mAssignmentListView;
 
     private FirebaseFirestore db;
+    private FirebaseAuth auth;
 
     //Adapter
-    private TaskAdapter mTaskAdapter;
-    private ArrayList<Task> mTaskList;
+    private AssignmentAdapter mAssignmentAdapter;
+    private ArrayList<Assignment> mAssignmentist;
 
-    private FloatingActionButton addTask;
+    private FloatingActionButton addAssignment;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View tasksFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
+        View assignmentsFragmentView = inflater.inflate(R.layout.fragment_tasks, container, false);
 
-        addTask = tasksFragmentView.findViewById(R.id.addTask);
+        addAssignment = assignmentsFragmentView.findViewById(R.id.addTask);
 
-        mTaskListView = tasksFragmentView.findViewById(R.id.tasksList);
+        mAssignmentListView = assignmentsFragmentView.findViewById(R.id.tasksList);
 
         //get database
             db = FirebaseFirestore.getInstance();
+            auth = FirebaseAuth.getInstance();
         //Set up the ArrayList
-            mTaskList = new ArrayList<Task>();
+        mAssignmentist = new ArrayList<Assignment>();
         //Set up the adapter
-            mTaskAdapter = new TaskAdapter(getContext(), mTaskList);
+        mAssignmentAdapter= new AssignmentAdapter(getContext(), mAssignmentist);
 
-            mTaskListView.setAdapter(mTaskAdapter);
+            mAssignmentListView.setAdapter(mAssignmentAdapter);
 
-            db.collection("users").document("coolguy").collection("task")
+        FirebaseUser user = auth.getInstance().getCurrentUser();
+
+            db.collection("users").document(user.getUid()).collection("assignments").orderBy("weight", Query.Direction.ASCENDING)
                     .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull com.google.android.gms.tasks.Task<QuerySnapshot> task) {
-                    List<Task> mTaskList = new ArrayList<>();
+                    List<Assignment> mAssignmentList = new ArrayList<>();
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot snapshot : task.getResult()) {
-                            Task t = snapshot.toObject(Task.class);
-                            mTaskList.add(t);
+                            Assignment a = snapshot.toObject(Assignment.class);
+                            mAssignmentList.add(a);
                         }
 
-                        mTaskAdapter.addAll(mTaskList);
-                        mTaskAdapter.notifyDataSetChanged();
-                        mTaskListView.setAdapter(mTaskAdapter);
+                        mAssignmentAdapter.addAll(mAssignmentList);
+                        mAssignmentAdapter.notifyDataSetChanged();
+                        mAssignmentListView.setAdapter(mAssignmentAdapter);
                     }
                 }
             });
 
-            addTask.setOnClickListener(new View.OnClickListener() {
+            addAssignment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(getActivity(), AddAssignment.class));
                 }
             });
 
-            return tasksFragmentView;
+            return assignmentsFragmentView;
     }
 
 }

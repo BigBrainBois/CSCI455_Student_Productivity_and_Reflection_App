@@ -1,22 +1,20 @@
 package com.example.csci_455_student_productivity_and_reflection_app.assignments;
 
-import java.util.Date;
-
 public class Assignment {
 
-    private String title;
-    private Date dueDate;
-    private double finalGrade, percentGrade;
+    private String title, course, currentGrade, dueDate;
+    private double weight;
 
     public Assignment() {
         //Empty constructor needed for firebase
     }
 
-    public Assignment(String title, Date dueDate, double finalGrade, double percentGrade) {
+    public Assignment(String title, String course, String dueDate, String currentGrade, double weight) {
         this.title = title;
+        this.course = course;
         this.dueDate = dueDate;
-        this.finalGrade = finalGrade;
-        this.percentGrade = percentGrade;
+        this.currentGrade = currentGrade;
+        this.weight = weight;
 
     }
 
@@ -24,15 +22,19 @@ public class Assignment {
         return title;
     }
 
-    public Date getDueDate() {
+    public String getCourse() {
+        return course;
+    }
+
+    public String getCurrentGrade() {
+        return currentGrade;
+    }
+
+    public String getDueDate() {
         return dueDate;
     }
 
-    public double getFinalGrade() {
-        return finalGrade;
-    }
-
-    public double getPercentGrade() {
-        return percentGrade;
+    public double getWeight() {
+        return weight;
     }
 }

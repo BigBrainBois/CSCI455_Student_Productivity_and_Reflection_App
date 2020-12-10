@@ -22,13 +22,15 @@ public class AssignmentAdapter extends ArrayAdapter<Assignment> {
             convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.items_task, parent, false);
         }
 
-      //  TextView titleTextView = convertView.findViewById(R.id.ta);
-        TextView currentGradeTextView = convertView.findViewById(R.id.course_average);
+        TextView titleTextView = convertView.findViewById(R.id.task_title);
+        TextView descriptionTextView = convertView.findViewById(R.id.task_description);
+        TextView dateTextView = convertView.findViewById(R.id.task_date);
 
         Assignment assignment = getItem(position);
 
-//        titleTextView.setText(assignment.getTitle());
-        //currentGradeTextView.setText(Course.getCurrentAverage() + "");
+          titleTextView.setText(assignment.getTitle());
+          descriptionTextView.setText(assignment.getCourse());
+          dateTextView.setText(assignment.getDueDate());
 
 
         // Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left);
