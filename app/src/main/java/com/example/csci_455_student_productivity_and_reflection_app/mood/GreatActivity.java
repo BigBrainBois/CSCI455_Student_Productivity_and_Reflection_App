@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.extensions.CalendarViewPager;
 import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
 import com.example.csci_455_student_productivity_and_reflection_app.MoodFragment;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
@@ -61,6 +63,7 @@ public class GreatActivity extends AppCompatActivity {
         text = findViewById(R.id.addTitle);
         color = (Button) findViewById(R.id.great_button);
 
+
         //Initialize the save button that will make the user click the button
         //to save the info in the journal
 
@@ -97,6 +100,8 @@ public class GreatActivity extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
 
                 String greatDate = dateView.getText().toString().trim();
                 String greatText = text.getText().toString().trim();

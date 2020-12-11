@@ -1,6 +1,7 @@
 package com.example.csci_455_student_productivity_and_reflection_app;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -15,12 +16,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.EventDay;
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.GoodActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.OkayActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.SadActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.TerribleActivity;
 import com.example.csci_455_student_productivity_and_reflection_app.mood.GreatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 
 public class MoodFragment extends Fragment {
@@ -50,6 +58,7 @@ public class MoodFragment extends Fragment {
         okay = view.findViewById(R.id.okay_button);
         good = view.findViewById(R.id.good_button);
         great = view.findViewById(R.id.great_button);
+    //    CalendarView calendarView = view.findViewById(R.id.CalendarView);
 
         fabOpen = AnimationUtils.loadAnimation(getActivity(), R.anim.fab_open);
         fabClose = AnimationUtils.loadAnimation(getActivity(), R.anim.fab_close);
@@ -60,6 +69,20 @@ public class MoodFragment extends Fragment {
         isOpen = false;
 
         /**Nawshin's continuation for mood fragment code */
+
+        List<EventDay> events = new ArrayList<>();
+        Calendar calendar = Calendar.getInstance();
+        events.add(new EventDay(calendar, R.drawable.ic_great_icon, Color.parseColor("#FF6666")));
+        CalendarView calendarView = (CalendarView) view.findViewById(R.id.CalendarView);
+        calendarView.setEvents(events);
+        calendarView.setOnDayClickListener(new OnDayClickListener() {
+            @Override
+            public void onDayClick(EventDay eventDay) {
+                Calendar clickedDayCalendar = eventDay.getCalendar();
+            }
+        });
+
+
      //   TextView Display = view.findViewById(R.id.dateTextView);
      //   Bundle bn = getActivity().getIntent().getExtras();
       //  String date = bn.getString("abc");

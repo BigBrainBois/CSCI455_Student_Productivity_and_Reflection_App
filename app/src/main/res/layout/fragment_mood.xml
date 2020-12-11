@@ -30,16 +30,21 @@
     </RelativeLayout>
 
     <!--Calendar-->
-    <CalendarView
+
+    <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/CalendarView"
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/_250sdp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:layout_below="@id/moodTitle"
-        android:theme="@style/CalenderViewCustom"
-        android:dateTextAppearance="@style/CalenderViewDateCustomText"
-        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+<!--    <CalendarView-->
+<!--        android:id="@+id/CalendarView"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="@dimen/_250sdp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="@dimen/_30sdp"-->
+<!--        android:layout_below="@id/moodTitle"-->
+<!--        android:theme="@style/CalenderViewCustom"-->
+<!--        android:dateTextAppearance="@style/CalenderViewDateCustomText"-->
+<!--        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"/>-->
 
 
     <!--Mood buttons-->
