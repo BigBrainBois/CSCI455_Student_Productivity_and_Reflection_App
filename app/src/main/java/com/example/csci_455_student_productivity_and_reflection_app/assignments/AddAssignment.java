@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -31,9 +30,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class AddAssignment extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AddAssignment extends AppCompatActivity {
 
-    private String setGrade, setColor, setWeight, date1;
+    private String setGrade, color, setWeight, date1, setColor;
 
 
 
@@ -50,7 +49,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
 
         // initializing Spinner options, see res /values/strings.xml for all initialized string arrays. [ "color" , " percentGrade ", " currentGrade " ]
 
-        Spinner weightList = findViewById(R.id.weightSpinner);
+        final Spinner weightList = findViewById(R.id.weightSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.percentGrade, android.R.layout.simple_spinner_item);
@@ -58,12 +57,8 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         weightList.setAdapter(adapter);
-        weightList.setOnItemSelectedListener(this);
-        //casting selected value to desired variable
-        setWeight = weightList.getSelectedItem().toString();
-        final double weightSet = Double.parseDouble(setWeight);
 
-        Spinner colorList = findViewById(R.id.colorSpinner);
+        final Spinner colorList = findViewById(R.id.colorSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
                 R.array.color, android.R.layout.simple_spinner_item);
@@ -71,11 +66,9 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         colorList.setAdapter(adapter1);
-        colorList.setOnItemSelectedListener(this);
         //casting selected value to desired variable
-        setColor = colorList.getSelectedItem().toString();
 
-        Spinner currentGradeList = findViewById(R.id.gradeSpinner);
+        final Spinner currentGradeList = findViewById(R.id.gradeSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
                 R.array.currentGrade, android.R.layout.simple_spinner_item);
@@ -83,10 +76,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         currentGradeList.setAdapter(adapter2);
-        currentGradeList.setOnItemSelectedListener(this);
         //casting selected value to desired variable
-        setGrade = currentGradeList.getSelectedItem().toString();
-
 
         // initializing edit texts
         assignmentTitle = findViewById(R.id.assignmentTitle);
@@ -109,6 +99,10 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
                 //create input
                 String mTitle = assignmentTitle.getText().toString().trim();
                 String mCourseTitle = courseTitle.getText().toString().trim();
+                setColor = colorList.getSelectedItem().toString();
+                setGrade = currentGradeList.getSelectedItem().toString();
+                setWeight = weightList.getSelectedItem().toString();
+                final double weightSet = Double.parseDouble(setWeight);
 
 
                 //function call to upload input
@@ -166,7 +160,7 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
                     public void onComplete(@NonNull Task<Void> task) {
 
                         //called when data is added successfully
-                        Toast.makeText(AddAssignment.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
+                       Toast.makeText(AddAssignment.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(AddAssignment.this, Dashboard.class);
                         startActivity(intent);
                     }
@@ -184,15 +178,6 @@ public class AddAssignment extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }
 
 
