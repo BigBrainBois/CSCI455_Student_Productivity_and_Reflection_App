@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
 
         FirebaseUser user = mAuth.getInstance().getCurrentUser();
         String[] firstName = user.getDisplayName().split("\\s");
-        greeting.setText(" Welcome back, \n" + firstName[0]);
+        greeting.setText(" Welcome back, " + firstName[0]);
         date.setText("Today is " + day);
 
 

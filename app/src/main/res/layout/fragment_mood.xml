@@ -19,6 +19,7 @@
         android:layout_marginTop="@dimen/_20sdp"/>
 
     <RelativeLayout
+        android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:layout_below="@id/moodTitle"
@@ -30,21 +31,19 @@
     </RelativeLayout>
 
     <!--Calendar-->
-
     <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/CalendarView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-<!--    <CalendarView-->
-<!--        android:id="@+id/CalendarView"-->
-<!--        android:layout_width="fill_parent"-->
-<!--        android:layout_height="@dimen/_250sdp"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="@dimen/_30sdp"-->
-<!--        android:layout_below="@id/moodTitle"-->
-<!--        android:theme="@style/CalenderViewCustom"-->
-<!--        android:dateTextAppearance="@style/CalenderViewDateCustomText"-->
-<!--        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"/>-->
+        android:layout_height="@dimen/_300sdp"
+        android:layout_below="@+id/divider"
+        app:headerColor="@color/tertiary"
+        app:headerLabelColor="@color/secondary"
+        app:abbreviationsBarColor="@color/secondary"
+        app:abbreviationsLabelsColor="@color/primary"
+        app:pagesColor="@color/tertiary"
+        app:daysLabelsColor="@color/secondary"
+        app:anotherMonthsDaysLabelsColor="@color/primary"
+        app:todayLabelColor="@color/yellowcontrast"/>
 
 
     <!--Mood buttons-->

@@ -49,14 +49,24 @@
             android:src="@drawable/text_input_bg"/>
     </RelativeLayout>
 
+    <TextView
+        android:id="@id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_12sdp"
+        android:layout_below="@id/divider"
+        android:text="Your classes:"
+        android:layout_margin="@dimen/_16sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:textColor="@color/secondary"/>
+
     <!--ListView to display courses-->
     <ListView
         android:id="@+id/courselist"
         android:layout_width="wrap_content"
         android:layout_height="534dp"
-        android:layout_below="@id/divider"
+        android:layout_below="@id/text"
         android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginBottom="@dimen/_16sdp"/>
 

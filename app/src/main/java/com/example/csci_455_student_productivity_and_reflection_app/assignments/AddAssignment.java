@@ -44,7 +44,7 @@ public class AddAssignment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_task);
+        setContentView(R.layout.activity_add_assignment);
 
 
         // initializing Spinner options, see res /values/strings.xml for all initialized string arrays. [ "color" , " percentGrade ", " currentGrade " ]
@@ -52,18 +52,18 @@ public class AddAssignment extends AppCompatActivity {
         final Spinner weightList = findViewById(R.id.weightSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.percentGrade, android.R.layout.simple_spinner_item);
+                R.array.percentGrade, R.layout.items_spinner);
         // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.items_spinner);
         // Apply the adapter to the spinner
         weightList.setAdapter(adapter);
 
         final Spinner colorList = findViewById(R.id.colorSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
-                R.array.color, android.R.layout.simple_spinner_item);
+                R.array.color, R.layout.items_spinner);
         // Specify the layout to use when the list of choices appears
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter1.setDropDownViewResource(R.layout.items_spinner);
         // Apply the adapter to the spinner
         colorList.setAdapter(adapter1);
         //casting selected value to desired variable
@@ -71,9 +71,9 @@ public class AddAssignment extends AppCompatActivity {
         final Spinner currentGradeList = findViewById(R.id.gradeSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
-                R.array.currentGrade, android.R.layout.simple_spinner_item);
+                R.array.currentGrade, R.layout.items_spinner);
         // Specify the layout to use when the list of choices appears
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter2.setDropDownViewResource(R.layout.items_spinner);
         // Apply the adapter to the spinner
         currentGradeList.setAdapter(adapter2);
         //casting selected value to desired variable
