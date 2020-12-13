@@ -3,6 +3,7 @@ package com.example.csci_455_student_productivity_and_reflection_app.courses;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,7 +26,8 @@ import java.util.Map;
 public class AddCourse extends AppCompatActivity {
 
         private EditText courseTitle;
-        private FloatingActionButton createCourse;
+        private EditText courseGrade;
+        private Button createCourse;
         FirebaseFirestore db;
 
         @Override
@@ -34,6 +36,7 @@ public class AddCourse extends AppCompatActivity {
             setContentView(R.layout.activity_add_course);
 
             courseTitle = findViewById(R.id.courseTitle);
+            courseGrade = findViewById(R.id.courseGrade);
             createCourse = findViewById(R.id.addCourse);
 
             db = FirebaseFirestore.getInstance();
