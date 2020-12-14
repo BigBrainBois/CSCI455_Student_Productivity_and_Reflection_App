@@ -2,26 +2,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/primary">
 
     <!--Container for header-->
     <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_75sdp"
         android:layout_marginBottom="@dimen/_15sdp">
-        <!--"Welcome back [user]"-->
+
         <TextView
             android:id="@+id/course_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
+            android:layout_alignParentBottom="true"
             android:fontFamily="@font/ubuntu_medium"
             android:text="Course Title"
             android:textColor="@color/secondary"
             android:textSize="@dimen/_18sdp" />
-        <!--"Today is [day]"-->
+
         <TextView
             android:id="@+id/course_grade"
             android:layout_width="wrap_content"
@@ -30,6 +32,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
+            android:layout_alignParentBottom="true"
             android:textColor="@color/yellowcontrast"
             android:text="Course Grade"
             android:textSize="@dimen/_18sdp"/>
@@ -51,23 +54,23 @@
     <ListView
         android:id="@+id/courselist"
         android:layout_width="wrap_content"
-        android:layout_height="534dp"
+        android:layout_height="@dimen/_350sdp"
         android:layout_below="@id/divider"
-        android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
-        android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginBottom="@dimen/_16sdp"/>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/courselist"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="60dp"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/yellowcontrast"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/tertiary"
+        app:srcCompat="@drawable/add" />
 
 </RelativeLayout>

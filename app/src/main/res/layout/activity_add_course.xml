@@ -90,9 +90,6 @@
             android:text="Add"
             android:fontFamily="@font/ubuntu_medium"
             android:backgroundTint="@color/yellowcontrast"
-            android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/add"
             android:tint="@color/tertiary" />
 
     </RelativeLayout>

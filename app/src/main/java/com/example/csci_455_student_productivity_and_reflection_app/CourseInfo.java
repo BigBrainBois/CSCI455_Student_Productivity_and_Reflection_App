@@ -3,14 +3,18 @@ package com.example.csci_455_student_productivity_and_reflection_app;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.csci_455_student_productivity_and_reflection_app.assignments.AddAssignment;
 import com.example.csci_455_student_productivity_and_reflection_app.assignments.Assignment;
 import com.example.csci_455_student_productivity_and_reflection_app.assignments.AssignmentAdapter;
+import com.example.csci_455_student_productivity_and_reflection_app.mood.TerribleActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,8 +28,8 @@ import java.util.List;
 public class CourseInfo extends Activity {
 
     private TextView courseTitle, courseGrade;
-
     private ListView mAssignmentListView;
+    private FloatingActionButton addCourse;
 
     private FirebaseFirestore db;
     private FirebaseAuth auth;
@@ -41,6 +45,7 @@ public class CourseInfo extends Activity {
 
         courseTitle = findViewById(R.id.course_title);
         courseGrade = findViewById(R.id.course_grade);
+        addCourse = findViewById(R.id.add_course);
 
         mAssignmentListView = findViewById(R.id.courselist);
 
@@ -80,6 +85,16 @@ public class CourseInfo extends Activity {
                 }
             }
         });
+
+
+        addCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CourseInfo.this, AddAssignment.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
