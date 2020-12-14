@@ -1,7 +1,7 @@
 package com.example.csci_455_student_productivity_and_reflection_app.assignments;
 
-import android.app.Activity;
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -19,7 +19,10 @@ public class AssignmentAdapter extends ArrayAdapter<Assignment> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null){
-            convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.items_task, parent, false);
+            LayoutInflater vi = LayoutInflater.from(getContext());
+            convertView = vi.inflate(R.layout.items_task, null);
+
+                    //((Activity)getApplicationContext().getLayoutInflater().inflate(R.layout.items_task, parent, false);
         }
 
         TextView titleTextView = convertView.findViewById(R.id.task_title);

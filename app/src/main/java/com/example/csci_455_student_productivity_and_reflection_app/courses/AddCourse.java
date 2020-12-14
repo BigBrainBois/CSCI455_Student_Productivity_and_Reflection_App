@@ -15,7 +15,6 @@ import com.example.csci_455_student_productivity_and_reflection_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -44,11 +43,11 @@ public class AddCourse extends AppCompatActivity {
             createCourse.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //input data
-                    String title = courseTitle.getText().toString().trim();
+
+                    double grade = Double.parseDouble(courseGrade.getText().toString());
 
                     //function call to upload data
-                    uploadData(title);
+                    uploadData(courseTitle.getText().toString().trim(), grade);
                 }
             });
 
@@ -63,10 +62,11 @@ public class AddCourse extends AppCompatActivity {
             //   }
         }
 
-        private void uploadData(String title) {
+        private void uploadData(String title, double currentGrade) {
 
             Map<String, Object> doc = new HashMap<>();
             doc.put("title", title);
+            doc.put("currentGrade", currentGrade);
 
             FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
             String uID = firebaseUser.getUid();

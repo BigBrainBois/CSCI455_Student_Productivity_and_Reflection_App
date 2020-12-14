@@ -150,11 +150,11 @@ public class AddAssignment extends AppCompatActivity {
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         String uID = firebaseUser.getUid();
 
-       // String document = courseTitle.getText().toString();
+        String document = courseTitle.getText().toString();
         String document2 = assignmentTitle.getText().toString();
 
         //add hash map as location for query.
-        db.collection("users").document(uID).collection("assignments").document(document2).set(doc)
+        db.collection("users").document(uID).collection("courses").document(document).collection("assignments").document(document2).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -177,6 +177,7 @@ public class AddAssignment extends AppCompatActivity {
                 });
 
     }
+
 
 }
 

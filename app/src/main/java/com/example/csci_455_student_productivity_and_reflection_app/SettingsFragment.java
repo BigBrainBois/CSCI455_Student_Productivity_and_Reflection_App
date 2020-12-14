@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,12 +15,14 @@ import androidx.fragment.app.Fragment;
 
 import com.example.csci_455_student_productivity_and_reflection_app.courses.AddCourse;
 import com.example.csci_455_student_productivity_and_reflection_app.settings.EditProfile;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsFragment extends Fragment {
 
     private RelativeLayout editProfile;
     private RelativeLayout resetPassword;
     private RelativeLayout addCourse;
+    private Button logout;
 
     @Nullable
     @Override
@@ -28,10 +32,22 @@ public class SettingsFragment extends Fragment {
         editProfile = v.findViewById(R.id.edit_profile);
         resetPassword = v.findViewById(R.id.reset_pass);
         addCourse = v.findViewById(R.id.add_course);
+        logout = v.findViewById(R.id.logout);
 
         configureProfile();
         configurePassword();
         configureCourseAdd();
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.signOut();
+                Toast.makeText(getActivity(), "Logged Out.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(), Login.class);
+                startActivity(intent);
+            }
+        });
 
         return v;
     }
@@ -66,4 +82,5 @@ public class SettingsFragment extends Fragment {
             }
         });
     }
+
 }
