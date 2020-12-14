@@ -13,29 +13,28 @@
         android:layout_marginBottom="@dimen/_15sdp">
 
         <TextView
-            android:id="@+id/title_note"
+            android:id="@+id/noteTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_20sdp"
-            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_above="@+id/subtitle"
             android:fontFamily="@font/ubuntu_medium"
-            android:text="Course Title"
+            android:text="Note Title"
             android:textColor="@color/secondary"
             android:textSize="@dimen/_18sdp" />
 
         <TextView
-            android:id="@+id/subtitle"
+            android:id="@+id/noteSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ubuntu_regular"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_20sdp"
             android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_20sdp"
             android:textColor="@color/yellowcontrast"
-            android:text="Course Grade"
-            android:textSize="@dimen/_18sdp"/>
+            android:text="Note Subtitle"
+            android:textSize="@dimen/_14sdp"/>
     </RelativeLayout>
 
     <!--Divider-->
@@ -50,27 +49,16 @@
             android:src="@drawable/text_input_bg"/>
     </RelativeLayout>
 
-    <!--ListView to display coursework-->
-    <ListView
-        android:id="@+id/courselist"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_350sdp"
-        android:layout_below="@id/divider"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:layout_marginBottom="@dimen/_16sdp"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_course"
+    <TextView
+        android:id="@+id/noteDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/yellowcontrast"
-        android:clickable="true"
-        android:focusable="true"
-        android:tint="@color/tertiary"
-        app:srcCompat="@drawable/add" />
+        android:layout_below="@id/divider"
+        android:text="Note Description"
+        android:textSize="@dimen/_14sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/ubuntu_regular"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_40sdp"/>
 
 </RelativeLayout>

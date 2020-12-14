@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import com.example.csci_455_student_productivity_and_reflection_app.assignments.AddAssignment;
 import com.example.csci_455_student_productivity_and_reflection_app.assignments.Assignment;
 import com.example.csci_455_student_productivity_and_reflection_app.assignments.AssignmentAdapter;
-import com.example.csci_455_student_productivity_and_reflection_app.mood.TerribleActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,8 +42,8 @@ public class CourseInfo extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_info);
 
-        courseTitle = findViewById(R.id.course_title);
-        courseGrade = findViewById(R.id.course_grade);
+        courseTitle = findViewById(R.id.title_note);
+        courseGrade = findViewById(R.id.subtitle);
         addCourse = findViewById(R.id.add_course);
 
         mAssignmentListView = findViewById(R.id.courselist);

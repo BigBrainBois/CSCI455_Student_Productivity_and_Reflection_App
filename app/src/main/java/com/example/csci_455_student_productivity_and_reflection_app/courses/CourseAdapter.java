@@ -23,7 +23,7 @@ public class CourseAdapter extends ArrayAdapter<Course>{
 
             }
 
-            TextView titleTextView = convertView.findViewById(R.id.course_title);
+            TextView titleTextView = convertView.findViewById(R.id.title_note);
             TextView currentGradeTextView = convertView.findViewById(R.id.course_average);
 
             Course Course = getItem(position);
