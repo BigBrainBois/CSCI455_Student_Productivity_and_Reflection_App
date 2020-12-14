@@ -70,17 +70,17 @@ public class MoodFragment extends Fragment {
 
         /**Nawshin's continuation for mood fragment code */
 
-        List<EventDay> events = new ArrayList<>();
-        Calendar calendar = Calendar.getInstance();
-        events.add(new EventDay(calendar, R.drawable.ic_great_icon, Color.parseColor("#FF6666")));
-        CalendarView calendarView = (CalendarView) view.findViewById(R.id.CalendarView);
-        calendarView.setEvents(events);
-        calendarView.setOnDayClickListener(new OnDayClickListener() {
-            @Override
-            public void onDayClick(EventDay eventDay) {
-                Calendar clickedDayCalendar = eventDay.getCalendar();
-            }
-        });
+          List<EventDay> events = new ArrayList<>();
+          Calendar calendar = Calendar.getInstance();
+          events.add(new EventDay(calendar, R.drawable.ic_great_icon, Color.parseColor("#FF6666")));
+          CalendarView calendarView = (CalendarView) view.findViewById(R.id.CalendarView);
+          calendarView.setEvents(events);
+          calendarView.setOnDayClickListener(new OnDayClickListener() {
+              @Override
+              public void onDayClick(EventDay eventDay) {
+                  Calendar clickedDayCalendar = eventDay.getCalendar();
+              }
+          });
 
 
      //   TextView Display = view.findViewById(R.id.dateTextView);

@@ -19,7 +19,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.applandeo.materialcalendarview.CalendarView;
+import com.applandeo.materialcalendarview.EventDay;
 import com.applandeo.materialcalendarview.extensions.CalendarViewPager;
+import com.applandeo.materialcalendarview.listeners.OnDayClickListener;
 import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
 import com.example.csci_455_student_productivity_and_reflection_app.MoodFragment;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
@@ -32,8 +34,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class GreatActivity extends AppCompatActivity {
@@ -101,11 +105,21 @@ public class GreatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
+                List<EventDay> events = new ArrayList<>();
+                Calendar calendar = Calendar.getInstance();
+              //  events.add(new EventDay(calendar, R.drawable.ic_great_icon, Color.parseColor("#FF6666")));
+               CalendarView calendarView = (CalendarView) view.findViewById(R.id.CalendarView);
+               calendarView.setEvents(events);calendarView.setOnDayClickListener(new OnDayClickListener() {
+                @Override
+                public void onDayClick(EventDay eventDay) {
+                    Calendar clickedDayCalendar = eventDay.getCalendar();
+                }
+            });
 
                 String greatDate = dateView.getText().toString().trim();
                 String greatText = text.getText().toString().trim();
-                String greatColor = color.getText().toString().trim();
+                String greatColor = String.valueOf(events.add(new EventDay(calendar, R.drawable.ic_great_icon, Color.parseColor("#FF6666"))));
+              //  String greatColor = color.getText().toString().trim();
 
                 uploadData(greatDate, greatText, greatColor);
 
@@ -131,10 +145,14 @@ public class GreatActivity extends AppCompatActivity {
         Map<String, Object> doc = new HashMap<>();
         doc.put("Date", greatDate);
         doc.put("Text", greatText);
-        doc.put("Color", greatColor);
+        doc.put("Mood", greatColor);
+       // doc.put("Color", greatColor);
 
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         String uID = firebaseUser.getUid();
+
+        
+
 
         db.collection("users").document(uID).collection("journal").document(greatDate).set(doc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -143,7 +161,7 @@ public class GreatActivity extends AppCompatActivity {
                         //called when data is added successfully
 
                         Toast.makeText(GreatActivity.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(GreatActivity.this, MoodFragment.class);
+                        Intent intent = new Intent(GreatActivity.this, Dashboard.class);
                         startActivity(intent);
                     }
                 })
