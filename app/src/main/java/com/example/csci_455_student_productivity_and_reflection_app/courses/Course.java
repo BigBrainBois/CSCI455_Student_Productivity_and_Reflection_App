@@ -3,15 +3,15 @@ package com.example.csci_455_student_productivity_and_reflection_app.courses;
 public class Course {
 
         private String title;
-        private double currentAverage;
+        private double currentGrade;
 
         public Course() {
             //Empty constructor needed for firebase
         }
 
-        public Course(String title, double currentAverage) {
+        public Course(String title, double currentGrade) {
             this.title = title;
-            this.currentAverage = currentAverage;
+            this.currentGrade = currentGrade;
 
         }
 
@@ -20,8 +20,8 @@ public class Course {
         }
 
 
-         public double getCurrentAverage() {
-              return currentAverage;
+         public double getCurrentGrade() {
+              return currentGrade;
          }
 
 }

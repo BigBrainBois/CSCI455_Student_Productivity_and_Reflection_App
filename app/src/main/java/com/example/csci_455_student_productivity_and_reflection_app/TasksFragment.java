@@ -67,7 +67,7 @@ public class TasksFragment extends Fragment {
 
         FirebaseUser user = auth.getInstance().getCurrentUser();
 
-            db.collection("users").document(user.getUid()).collection("assignments").orderBy("weight", Query.Direction.ASCENDING)
+            db.collection("users").document(user.getUid()).collection("courses").orderBy("weight", Query.Direction.ASCENDING)
                     .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull com.google.android.gms.tasks.Task<QuerySnapshot> task) {

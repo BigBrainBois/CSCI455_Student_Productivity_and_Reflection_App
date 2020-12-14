@@ -20,6 +20,7 @@ public class CourseAdapter extends ArrayAdapter<Course>{
         public View getView(int position, View convertView, ViewGroup parent) {
             if(convertView == null){
                 convertView = ((Activity)getContext()).getLayoutInflater().inflate(R.layout.items_course, parent, false);
+
             }
 
             TextView titleTextView = convertView.findViewById(R.id.course_title);
@@ -28,8 +29,7 @@ public class CourseAdapter extends ArrayAdapter<Course>{
             Course Course = getItem(position);
 
             titleTextView.setText(Course.getTitle());
-            currentGradeTextView.setText(Course.getCurrentAverage() + "");
-
+            currentGradeTextView.setText(Course.getCurrentGrade() + "");
 
             // Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left);
             //convertView.startAnimation(animation);

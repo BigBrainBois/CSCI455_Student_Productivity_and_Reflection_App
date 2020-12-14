@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
+import com.example.csci_455_student_productivity_and_reflection_app.NotesFragment;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -82,7 +82,7 @@ public class NotesCreate extends AppCompatActivity {
                         //called when data is added successfully
 
                         Toast.makeText(NotesCreate.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(NotesCreate.this, Dashboard.class);
+                        Intent intent = new Intent(NotesCreate.this, NotesFragment.class);
                         startActivity(intent);
                     }
                 })

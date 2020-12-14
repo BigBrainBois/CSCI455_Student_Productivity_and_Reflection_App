@@ -1,9 +1,11 @@
 package com.example.csci_455_student_productivity_and_reflection_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -42,7 +44,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
 
-        View courseFragmentView = inflater.inflate(R.layout.fragment_home, container, false);
+        final View courseFragmentView = inflater.inflate(R.layout.fragment_home, container, false);
 
         CourseListView = courseFragmentView.findViewById(R.id.courselist);
 
@@ -80,6 +82,20 @@ public class HomeFragment extends Fragment {
 
                 }
 
+        });
+
+
+        //Create a listener to handle starting a new activity when a course is clicked.
+        //https://stackoverflow.com/questions/21295328/android-listview-with-onclick-items
+        CourseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Course clickedObj = (Course) adapterView.getItemAtPosition(position);
+                Intent intent = new Intent(getActivity(), CourseInfo.class);
+                intent.putExtra("course title", clickedObj.getTitle());
+                intent.putExtra("course grade", clickedObj.getCurrentGrade());
+                startActivity(intent);
+            }
         });
 
         return courseFragmentView;
