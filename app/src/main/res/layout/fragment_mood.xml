@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/moodfrag"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/moodfrag"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary">
@@ -12,12 +11,12 @@
         android:id="@+id/moodTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/mood"
-        android:gravity="center"
-        android:textColor="@color/secondary"
+        android:layout_marginTop="@dimen/_20sdp"
         android:fontFamily="@font/ubuntu_bold"
-        android:textSize="@dimen/_28sdp"
-        android:layout_marginTop="@dimen/_20sdp"/>
+        android:gravity="center"
+        android:text="@string/mood"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/_28sdp" />
 
     <RelativeLayout
         android:id="@+id/divider"
@@ -25,10 +24,11 @@
         android:layout_height="@dimen/_1sdp"
         android:layout_below="@id/moodTitle"
         android:layout_marginTop="@dimen/_20sdp">
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/text_input_bg"/>
+            android:src="@drawable/text_input_bg" />
     </RelativeLayout>
 
     <!--Calendar-->
@@ -37,14 +37,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_300sdp"
         android:layout_below="@+id/divider"
-        app:headerColor="@color/tertiary"
-        app:headerLabelColor="@color/secondary"
         app:abbreviationsBarColor="@color/secondary"
         app:abbreviationsLabelsColor="@color/primary"
-        app:pagesColor="@color/tertiary"
-        app:daysLabelsColor="@color/secondary"
         app:anotherMonthsDaysLabelsColor="@color/primary"
-        app:todayLabelColor="@color/yellowcontrast"/>
+        app:daysLabelsColor="@color/secondary"
+        app:headerColor="@color/tertiary"
+        app:headerLabelColor="@color/secondary"
+        app:pagesColor="@color/tertiary"
+        app:todayLabelColor="@color/yellowcontrast" />
 
 
     <!--Mood buttons-->
@@ -67,71 +67,71 @@
         android:id="@+id/terrible_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/mood_button"
         android:layout_alignTop="@+id/mood_button"
         android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_toStartOf="@+id/mood_button"
+        android:backgroundTint="@color/terrible_button_background_color"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_terrible_icon"
-        android:backgroundTint="@color/terrible_button_background_color"/>
+        app:srcCompat="@drawable/ic_terrible_icon" />
 
     <!--Mood buttons: sad mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/sad_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/terrible_button"
         android:layout_alignTop="@+id/terrible_button"
+        android:layout_toStartOf="@+id/terrible_button"
+        android:backgroundTint="@color/sad_button_background_color"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_sad_icon"
-        android:backgroundTint="@color/sad_button_background_color"/>
+        app:srcCompat="@drawable/ic_sad_icon" />
 
     <!--Mood buttons: okay mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/okay_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/sad_button"
         android:layout_alignTop="@+id/sad_button"
+        android:layout_toStartOf="@+id/sad_button"
+        android:backgroundTint="@color/okay_button_background_color"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_okay_icon"
-        android:backgroundTint="@color/okay_button_background_color"/>
+        app:srcCompat="@drawable/ic_okay_icon" />
 
     <!--Mood buttons: good mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/good_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/okay_button"
         android:layout_alignTop="@+id/okay_button"
+        android:layout_toStartOf="@+id/okay_button"
+        android:backgroundTint="@color/good_button_background_color"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_good_icon"
-        android:backgroundTint="@color/good_button_background_color"/>
+        app:srcCompat="@drawable/ic_good_icon" />
 
     <!--Mood buttons: great mood-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/great_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/good_button"
         android:layout_alignTop="@+id/good_button"
+        android:layout_toStartOf="@+id/good_button"
+        android:backgroundTint="@color/great_button_background_color"
         android:clickable="true"
         android:focusable="true"
         android:tint="@android:color/white"
         android:visibility="invisible"
-        app:srcCompat="@drawable/ic_great_icon"
-        android:backgroundTint="@color/great_button_background_color"/>
+        app:srcCompat="@drawable/ic_great_icon" />
 
 
 </RelativeLayout>
