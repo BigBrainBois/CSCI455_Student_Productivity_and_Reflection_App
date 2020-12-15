@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -83,6 +84,18 @@ public class NotesFragment extends Fragment {
             public void onClick(View view) {
                 startActivityForResult(new Intent(getActivity(), NotesCreate.class),
                         REQUEST_CODE_ADD_NOTE);
+            }
+        });
+
+        notesListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Note clickedObj = (Note) adapterView.getItemAtPosition(position);
+                Intent intent = new Intent(getActivity(), NoteInfo.class);
+                intent.putExtra("note title", clickedObj.getTitle());
+                intent.putExtra("note subtitle", clickedObj.getSubtitle());
+                intent.putExtra("note description", clickedObj.getDescription());
+                startActivity(intent);
             }
         });
 

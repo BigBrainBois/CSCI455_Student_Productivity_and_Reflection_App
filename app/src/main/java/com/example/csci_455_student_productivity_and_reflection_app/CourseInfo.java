@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -28,7 +29,7 @@ public class CourseInfo extends Activity {
 
     private TextView courseTitle, courseGrade;
     private ListView mAssignmentListView;
-    private FloatingActionButton addCourse;
+    private FloatingActionButton addAssignment;
 
     private FirebaseFirestore db;
     private FirebaseAuth auth;
@@ -44,7 +45,7 @@ public class CourseInfo extends Activity {
 
         courseTitle = findViewById(R.id.title_note);
         courseGrade = findViewById(R.id.subtitle);
-        addCourse = findViewById(R.id.add_course);
+        addAssignment = findViewById(R.id.add_assignments);
 
         mAssignmentListView = findViewById(R.id.courselist);
 
@@ -86,10 +87,21 @@ public class CourseInfo extends Activity {
         });
 
 
-        addCourse.setOnClickListener(new View.OnClickListener() {
+        addAssignment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CourseInfo.this, AddAssignment.class);
+                startActivity(intent);
+            }
+        });
+
+       mAssignmentListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Assignment clickedObj = (Assignment) adapterView.getItemAtPosition(position);
+                Intent intent = new Intent(CourseInfo.this, AssignmentInfo.class);
+                intent.putExtra("course title", clickedObj.getTitle());
+                intent.putExtra("course grade", clickedObj.getCurrentGrade());
                 startActivity(intent);
             }
         });

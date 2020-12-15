@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary"
+    tools:context=".courses.AddCourse">
+
+    <!--Mood buttons-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="351dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="update course average"
+        android:textColor="@color/secondary"
+        android:textSize="@dimen/_18sdp" />
+
+
+    <!--Divider-->
+    <RelativeLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/textView">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/text_input_bg" />
+    </RelativeLayout>
+
+
+    <!--Add courses section with add button-->
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_below="@id/divider">
+
+        <EditText
+            android:id="@+id/newCourseGrade"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:hint="Current Grade"
+            android:importantForAutofill="yes"
+            android:inputType="text"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            android:textColor="@color/secondary"
+            android:textColorHint="@color/tertiary"
+            android:textSize="@dimen/_12sdp" />
+
+        <Button
+            android:id="@+id/addCourse"
+            android:layout_width="110dp"
+            android:layout_height="64dp"
+            android:layout_below="@+id/newCourseGrade"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="38dp"
+            android:backgroundTint="@color/yellowcontrast"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="UPDATE"
+            android:tint="@color/tertiary" />
+
+    </RelativeLayout>
+
+    <!--Courses will appear here-->
+
+</RelativeLayout>

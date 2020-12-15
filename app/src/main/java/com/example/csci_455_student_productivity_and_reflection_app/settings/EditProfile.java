@@ -10,8 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
-import com.example.csci_455_student_productivity_and_reflection_app.SettingsFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,7 +21,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EditProfile extends AppCompatActivity {
 
-    private EditText name, email;
+
+    private EditText name;
     private Button update;
 
     private FirebaseAuth mAuth;
@@ -34,7 +35,6 @@ public class EditProfile extends AppCompatActivity {
         setContentView(R.layout.activity_edit_profile);
 
         name = findViewById(R.id.name);
-        email = findViewById(R.id.email);
 
         update = findViewById(R.id.updateButton);
 
@@ -44,8 +44,6 @@ public class EditProfile extends AppCompatActivity {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                user.updateEmail(email.getText().toString());
 
                 UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                         .setDisplayName(name.getText().toString()).build();
@@ -59,7 +57,8 @@ public class EditProfile extends AppCompatActivity {
                             }
                         });
 
-                startActivity(new Intent(EditProfile.this, SettingsFragment.class));
+                Intent intent = new Intent(EditProfile.this, Dashboard.class);
+                startActivity(intent);
 
             }
         });

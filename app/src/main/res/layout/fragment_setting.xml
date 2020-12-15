@@ -117,7 +117,7 @@
 
         <!--Add Course Row-->
         <RelativeLayout
-            android:id="@+id/add_course"
+            android:id="@+id/add_assignments"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_40sdp"
@@ -152,7 +152,7 @@
             android:layout_marginStart="@dimen/_18sdp"
             android:padding="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:layout_below="@+id/add_course">
+            android:layout_below="@+id/add_assignments">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -173,7 +173,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_1sdp"
-            android:layout_below="@+id/add_course">
+            android:layout_below="@+id/add_assignments">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

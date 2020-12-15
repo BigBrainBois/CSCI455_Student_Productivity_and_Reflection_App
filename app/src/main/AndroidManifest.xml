@@ -25,6 +25,8 @@
         <activity android:name=".Signup" />
         <activity android:name=".Login" />
         <activity android:name=".CourseInfo"/>
+        <activity android:name=".NoteInfo"/>
+        <activity android:name=".AssignmentInfo"/>
         <activity android:name=".settings.EditProfile" />
         <activity
             android:name=".MainActivity"

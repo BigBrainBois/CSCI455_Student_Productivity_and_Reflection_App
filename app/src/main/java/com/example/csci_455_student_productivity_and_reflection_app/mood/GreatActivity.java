@@ -1,7 +1,5 @@
 package com.example.csci_455_student_productivity_and_reflection_app.mood;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.applandeo.materialcalendarview.CalendarView;
 import com.applandeo.materialcalendarview.EventDay;
 import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
@@ -22,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -77,6 +80,7 @@ public class GreatActivity extends AppCompatActivity {
         saveButton.setOnClickListener(view -> {
             String greatDate = day;
             String greatText = text.getText().toString().trim();
+
             String greatColor = String.valueOf(currEvent.add(new EventDay(calendar, R.drawable.ic_great_icon, Color.parseColor("#FF6666"))));
 
             //update database

@@ -60,7 +60,7 @@
         android:layout_marginBottom="@dimen/_16sdp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_course"
+        android:id="@+id/add_assignments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
