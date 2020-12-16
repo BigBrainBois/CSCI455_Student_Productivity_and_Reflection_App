@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_75sdp"
+        android:layout_height="@dimen/_60sdp"
         android:layout_marginBottom="@dimen/_15sdp">
 
         <TextView

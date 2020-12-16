@@ -36,9 +36,9 @@ public class Dashboard extends AppCompatActivity {
                         case R.id.nav_mood:
                             selectedFragment = new MoodFragment();
                             break;
-                        case R.id.nav_courses:
-                            selectedFragment = new TasksFragment();
-                            break;
+//                        case R.id.nav_courses:
+//                            selectedFragment = new TasksFragment();
+//                            break;
                         case R.id.nav_notes:
                             selectedFragment = new NotesFragment();
                             break;
@@ -51,6 +51,5 @@ public class Dashboard extends AppCompatActivity {
 
                     return true;
                 }
-
             };
 }

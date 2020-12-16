@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/checkBox"
@@ -10,62 +10,45 @@
 
     <!--Used for displaying schedules in the schedules fragment-->
 
-    <!--Container for Title and description-->
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="210dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingBottom="5dp"
-        tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/task_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:fontFamily="@font/ubuntu_medium"
-            android:text="Task Title"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_14sdp" />
-
-        <TextView
-            android:id="@+id/task_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:fontFamily="@font/ubuntu_regular"
-            android:text="@string/description_title"
-            android:textColor="@color/lightgray"
-            android:textSize="@dimen/_12sdp" />
-    </LinearLayout>
-
-    <!--Missing Constraints needed for a Constraint Layout to avoid errors, do not remove-->
-    <LinearLayout
+    <TextView
+        android:id="@+id/task_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_75sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        tools:ignore="MissingConstraints">
-    </LinearLayout>
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:text="Task Title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14sdp" />
+
+    <TextView
+        android:id="@+id/task_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu_regular"
+        android:text="@string/description_title"
+        android:textColor="@color/lightgray"
+        android:textSize="@dimen/_12sdp"
+        android:layout_below="@id/task_title"/>
+
+    <!--Missing Constraints needed for a Constraint Layout to avoid errors, do not remove-->
 
     <!--Schedule date will display here-->
     <TextView
         android:id="@+id/task_date"
-        android:layout_width="@dimen/_150sdp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/_20sdp"
         android:fontFamily="@font/ubuntu_regular"
         android:text="Due Time"
         android:textAlignment="center"
         android:textColor="@color/yellowcontrast"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="@dimen/_12sdp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

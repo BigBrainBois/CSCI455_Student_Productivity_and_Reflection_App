@@ -8,29 +8,30 @@
     tools:context=".MainActivity">
 
     <!--Image in the middle-->
+
+    <!--Signup Button-->
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="221dp"
-        android:layout_height="191dp"
+        android:layout_width="314dp"
+        android:layout_height="300dp"
         android:scaleType="fitXY"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        android:src="@drawable/logo"
+        android:src="@drawable/studalitylogo"
         app:layout_constraintBottom_toTopOf="@+id/signup"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683"
-        tools:srcCompat="@drawable/logo" />
+        app:layout_constraintVertical_bias="0.609" />
 
-    <!--Signup Button-->
     <Button
         android:id="@+id/signup"
-        android:fontFamily="@font/ubuntu_medium"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_50sdp"
         android:background="@drawable/text_input_bg"
         android:backgroundTint="@color/secondary"
+        android:fontFamily="@font/ubuntu_medium"
         android:text="Sign Up"
         android:textAlignment="center"
         android:textSize="@dimen/_15sdp"
@@ -51,8 +52,8 @@
         android:fontFamily="@font/ubuntu_medium"
         android:text="@string/login"
         android:textAlignment="center"
-        android:textSize="@dimen/_15sdp"
         android:textColor="@color/secondary"
+        android:textSize="@dimen/_15sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,19 +61,5 @@
         app:layout_constraintVertical_bias="0.899" />
 
     <!--Title-->
-    <TextView
-        android:id="@+id/textView"
-        android:fontFamily="@font/ubuntu_bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/studality"
-        android:textColor="#E8E8E8"
-        android:textSize="16pt"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.735" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.csci_455_student_productivity_and_reflection_app.HomeFragment;
+import com.example.csci_455_student_productivity_and_reflection_app.Dashboard;
 import com.example.csci_455_student_productivity_and_reflection_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,9 +33,6 @@ import java.util.Map;
 public class AddAssignment extends AppCompatActivity {
 
     private String setGrade, color, setWeight, date1, setColor;
-
-
-
     private TextView assignmentTitle, courseTitle;
     private Button dateButton, addAssignment;
     FirebaseFirestore db;
@@ -161,7 +158,7 @@ public class AddAssignment extends AppCompatActivity {
 
                         //called when data is added successfully
                        Toast.makeText(AddAssignment.this, "Saved Successfully. ", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(AddAssignment.this, HomeFragment.class);
+                        Intent intent = new Intent(AddAssignment.this, Dashboard.class);
                         startActivity(intent);
                     }
                 })
