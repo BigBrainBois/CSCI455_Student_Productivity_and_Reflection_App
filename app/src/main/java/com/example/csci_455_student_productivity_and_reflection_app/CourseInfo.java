@@ -68,7 +68,7 @@ public class CourseInfo extends Activity {
 
         FirebaseUser user = auth.getInstance().getCurrentUser();
 
-        db.collection("users").document(user.getUid()).collection("courses").document(title).collection("assignments").orderBy("weight", Query.Direction.ASCENDING)
+        db.collection("users").document(user.getUid()).collection("courses").document(title).collection("assignments").orderBy("weight", Query.Direction.DESCENDING)
                 .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull com.google.android.gms.tasks.Task<QuerySnapshot> task) {
